@@ -1,8 +1,6 @@
 const Home = () => {
   return (
     <div>
-      <h1>MotivateCore</h1>
-      <p>Motivate Your Life</p>
       <p>
         MotivateCore is a platform that helps you motivate yourself to achieve
         your goals.
