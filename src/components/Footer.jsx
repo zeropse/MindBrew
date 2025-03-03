@@ -1,9 +1,7 @@
 const Footer = () => {
   return (
     <div className="flex justify-between items-center p-5">
-      <p className="text-sm">
-        @{new Date().getFullYear()} motivatecore. All rights reserved.
-      </p>
+      <p className="text-sm">@{new Date().getFullYear()} motivatecore</p>
       <p className="text-sm">
         Made by{" "}
         <span
@@ -18,6 +16,7 @@ const Footer = () => {
           href="https://github.com/zeropse/"
           target="_blank"
           rel="noopener noreferrer"
+          className="hover:text-gray-300"
         >
           GitHub
         </a>
@@ -25,6 +24,7 @@ const Footer = () => {
           href="https://www.linkedin.com/in/zeropse/"
           target="_blank"
           rel="noopener noreferrer"
+          className="hover:text-gray-300"
         >
           LinkedIn
         </a>
