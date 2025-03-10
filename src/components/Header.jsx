@@ -22,7 +22,7 @@ const Header = () => {
           </li>
           <li
             className="cursor-pointer font-bold bg-white text-black p-3 rounded-md hover:bg-gray-300"
-            onClick={() => navigate("/started")}
+            onClick={() => navigate("/choose-topic")}
           >
             Get Started
           </li>

@@ -94,7 +94,7 @@ const Home = () => {
 
         <button
           className="cursor-pointer font-bold bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400"
-          onClick={() => navigate("/started")}
+          onClick={() => navigate("/choose-topic")}
         >
           Get Started
         </button>
