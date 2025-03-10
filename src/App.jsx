@@ -11,8 +11,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Home />} />
-          <Route path="/choose-topic" element={<Topics />} />
-          <Route path="/quote/:slug" element={<QuotePage />} />
+          <Route path="/inspiration" element={<Topics />} />
+          <Route path="/inspiration/:slug" element={<QuotePage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

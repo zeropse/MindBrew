@@ -69,7 +69,7 @@ const Quotes = ({ topic }) => {
       </p>
       <p className="text-gray-400">— {quote.author}</p>
       <div className="mt-8 flex flex-col sm:flex-row gap-3 w-full justify-center">
-        <Link to="/choose-topic" className="w-full sm:w-auto">
+        <Link to="/inspiration" className="w-full sm:w-auto">
           <Button
             variant="outline"
             className="text-black border-gray-500 hover:bg-gray-500 hover:text-white w-full cursor-pointer"
