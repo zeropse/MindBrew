@@ -3,9 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import topics from "../data/topics";
 
-const Topics = () => {
+const Inspirations = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 bg-black">
+    <div className="flex items-center justify-center min-h-[calc(100vh-150px)] p-4">
       <Card className="bg-neutral-900 text-gray-100 border border-neutral-700 shadow-2xl w-full max-w-5xl p-6 sm:p-8 md:p-10 lg:p-12">
         <CardHeader className="pb-10">
           <CardTitle className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center">
@@ -31,4 +31,4 @@ const Topics = () => {
   );
 };
 
-export default Topics;
+export default Inspirations;

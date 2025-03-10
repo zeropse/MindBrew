@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
   return (
-    <div className="flex justify-between items-center ">
+    <header className="flex justify-between items-center text-white relative z-10">
       <div
         className="p-4 cursor-pointer hover:text-gray-300"
         onClick={() => navigate("/")}
@@ -28,7 +28,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </header>
   );
 };
 

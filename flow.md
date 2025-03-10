@@ -53,17 +53,6 @@
 - **Notification:** Send a daily notification with a quote based on their preferred topics (if available) or a randomly selected topic.
 - **Deep Link:** Tapping the notification opens the app and displays the full quote.
 
-**Diagram (Simplified):**
-
-```
-[Landing Page] --> [Topic Selection] --> [Loading] --> [Quote Display]
-       ^                                                    |
-       |_____________________________________________________| ("Change Topic")
-
-[Quote Display] --(Get Another Quote)--> [Loading] --> [Quote Display]
-
-[User Account] (Optional, accessible from various pages)
-```
 
 **Additional Considerations:**
 

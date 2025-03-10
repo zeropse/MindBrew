@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="flex justify-between items-center p-5">
+    <footer className="flex justify-between items-center p-5 text-white relative z-10">
       <p className="text-sm">@{new Date().getFullYear()} motivatecore</p>
       <p className="text-sm">
         Made by{" "}
@@ -29,7 +29,7 @@ const Footer = () => {
           LinkedIn
         </a>
       </p>
-    </div>
+    </footer>
   );
 };
 

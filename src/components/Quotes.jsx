@@ -54,7 +54,7 @@ const Quotes = ({ topic }) => {
   if (!quote) {
     return (
       <div className="text-center min-h-[200px] flex flex-col items-center justify-center py-6">
-        <p className="text-lg sm:text-xl font-medium mb-6">
+        <p className="text-lg sm:text-xl font-medium mb-6 text-gray-200">
           No quotes found for this topic.
         </p>
         <Link to="/inspiration" className="w-full sm:w-auto">
@@ -68,9 +68,10 @@ const Quotes = ({ topic }) => {
       </div>
     );
   }
+
   return (
     <div className="text-center min-h-[200px] flex flex-col items-center justify-center py-6">
-      <p className="text-lg sm:text-xl md:text-2xl font-medium mb-6 italic">
+      <p className="text-lg sm:text-xl md:text-2xl font-medium mb-6 italic text-gray-100">
         "{quote.quote}"
       </p>
       <p className="text-gray-400">— {quote.author}</p>
