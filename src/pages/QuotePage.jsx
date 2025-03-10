@@ -6,7 +6,6 @@ import NotFound from "./NotFound";
 
 const QuotePage = () => {
   const { slug } = useParams();
-
   const topicData = topics.find((t) => t.slug === slug);
 
   if (!topicData) {

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import topic from "../data/topics";
+import topics from "../data/topics";
 
 const Topics = () => {
   return (
@@ -14,7 +14,7 @@ const Topics = () => {
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-black">
-            {topic.map((t) => (
+            {topics.map((t) => (
               <Link key={t.slug} to={`/inspiration/${t.slug}`}>
                 <Button
                   variant="outline"

@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import quotes from "../data/quotes.json";
-import NotFound from "../pages/NotFound";
 
 const Quotes = ({ topic }) => {
   const [loading, setLoading] = useState(true);
@@ -19,22 +18,16 @@ const Quotes = ({ topic }) => {
           : quotes.filter((q) => q.topic.toLowerCase() === topic.toLowerCase());
 
       if (filteredQuotes.length > 0) {
-        const seed = Date.now() % 10000;
-        const prime = 31;
+        let randomIndex = Math.floor(Math.random() * filteredQuotes.length);
 
-        let randomValue = Math.random() * seed * prime;
-        randomValue += Math.random() * filteredQuotes.length;
-        const randomIndex = Math.floor(randomValue % filteredQuotes.length);
-
-        let selectedIndex = randomIndex;
         if (
           filteredQuotes.length > 1 &&
           filteredQuotes[randomIndex].id === currentQuoteId
         ) {
-          selectedIndex = (randomIndex + 1) % filteredQuotes.length;
+          randomIndex = (randomIndex + 1) % filteredQuotes.length;
         }
 
-        const selectedQuote = filteredQuotes[selectedIndex];
+        const selectedQuote = filteredQuotes[randomIndex];
         setQuote(selectedQuote);
         setCurrentQuoteId(selectedQuote.id);
       } else {
@@ -42,7 +35,7 @@ const Quotes = ({ topic }) => {
       }
 
       setLoading(false);
-    }, 800);
+    }, 750);
   }, [topic, currentQuoteId]);
 
   useEffect(() => {
@@ -59,9 +52,22 @@ const Quotes = ({ topic }) => {
   }
 
   if (!quote) {
-    return <NotFound />;
+    return (
+      <div className="text-center min-h-[200px] flex flex-col items-center justify-center py-6">
+        <p className="text-lg sm:text-xl font-medium mb-6">
+          No quotes found for this topic.
+        </p>
+        <Link to="/inspiration" className="w-full sm:w-auto">
+          <Button
+            variant="outline"
+            className="text-black border-gray-500 hover:bg-gray-500 hover:text-white w-full cursor-pointer"
+          >
+            Change Topic
+          </Button>
+        </Link>
+      </div>
+    );
   }
-
   return (
     <div className="text-center min-h-[200px] flex flex-col items-center justify-center py-6">
       <p className="text-lg sm:text-xl md:text-2xl font-medium mb-6 italic">
