@@ -40,7 +40,11 @@ const Quotes = ({ topic }) => {
 
   useEffect(() => {
     getRandomQuote();
-  }, [getRandomQuote]);
+  }, [topic]);
+
+  const handleGetAnotherQuote = () => {
+    getRandomQuote();
+  };
 
   if (loading) {
     return (
@@ -86,7 +90,7 @@ const Quotes = ({ topic }) => {
         </Link>
         <Button
           className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto cursor-pointer"
-          onClick={getRandomQuote}
+          onClick={handleGetAnotherQuote}
         >
           Get Another Quote
         </Button>
