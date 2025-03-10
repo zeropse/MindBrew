@@ -24,7 +24,7 @@ const Header = () => {
             className="cursor-pointer font-bold bg-white text-black p-3 rounded-md hover:bg-gray-300"
             onClick={() => navigate("/inspiration")}
           >
-            Get Started
+            Find Your Quote
           </li>
         </ul>
       </div>
