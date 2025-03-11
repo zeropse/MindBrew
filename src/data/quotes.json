@@ -1,807 +1,690 @@
 [
   {
     "topic": "Motivation",
-    "quote": "The only way to achieve the impossible is to believe it is possible.",
-    "author": "Charles Kingsleigh"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "Success is the sum of small efforts, repeated day in and day out.",
-    "author": "Robert Collier"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "Don't watch the clock; do what it does. Keep going.",
-    "author": "Sam Levenson"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "Your limitation—it's only your imagination.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "Great things never come from comfort zones.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "Dream it. Wish it. Do it.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "Success doesn’t just find you. You have to go out and get it.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "The harder you work for something, the greater you’ll feel when you achieve it.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "Believe you can and you’re halfway there.",
-    "author": "Theodore Roosevelt"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "The key to success is to focus on goals, not obstacles.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Success",
-    "quote": "Success is not final, failure is not fatal: It is the courage to continue that counts.",
-    "author": "Winston Churchill"
-  },
-  {
-    "topic": "Success",
-    "quote": "The way to get started is to quit talking and begin doing.",
-    "author": "Walt Disney"
-  },
-  {
-    "topic": "Success",
-    "quote": "Success usually comes to those who are too busy to be looking for it.",
-    "author": "Henry David Thoreau"
-  },
-  {
-    "topic": "Success",
-    "quote": "Don’t wait. The time will never be just right.",
-    "author": "Napoleon Hill"
-  },
-  {
-    "topic": "Success",
-    "quote": "Opportunities don't happen, you create them.",
-    "author": "Chris Grosser"
-  },
-  {
-    "topic": "Success",
-    "quote": "Do not wait to strike till the iron is hot, but make it hot by striking.",
-    "author": "William Butler Yeats"
-  },
-  {
-    "topic": "Success",
-    "quote": "Success is the result of preparation, hard work, and learning from failure.",
-    "author": "Colin Powell"
-  },
-  {
-    "topic": "Success",
-    "quote": "The best way to predict the future is to create it.",
-    "author": "Abraham Lincoln"
-  },
-  {
-    "topic": "Success",
-    "quote": "Success is walking from failure to failure with no loss of enthusiasm.",
-    "author": "Winston Churchill"
+    "quotes": [
+      {
+        "quote": "The only way to achieve the impossible is to believe it is possible.",
+        "author": "Charles Kingsleigh"
+      },
+      {
+        "quote": "Success is the sum of small efforts, repeated day in and day out.",
+        "author": "Robert Collier"
+      },
+      {
+        "quote": "Don't watch the clock; do what it does. Keep going.",
+        "author": "Sam Levenson"
+      },
+      {
+        "quote": "Your limitation—it's only your imagination.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "Great things never come from comfort zones.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "Dream it. Wish it. Do it.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "Success doesn't just find you. You have to go out and get it.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "The harder you work for something, the greater you'll feel when you achieve it.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "Believe you can and you're halfway there.",
+        "author": "Theodore Roosevelt"
+      },
+      {
+        "quote": "The key to success is to focus on goals, not obstacles.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "The only person you should try to be better than is the person you were yesterday.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "The question isn't who is going to let me; it's who is going to stop me.",
+        "author": "Ayn Rand"
+      },
+      {
+        "quote": "When you feel like quitting, remember why you started.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "Don't count the days, make the days count.",
+        "author": "Muhammad Ali"
+      },
+      {
+        "quote": "Act as if what you do makes a difference. It does.",
+        "author": "William James"
+      },
+      {
+        "quote": "If opportunity doesn't knock, build a door.",
+        "author": "Milton Berle"
+      },
+      {
+        "quote": "Start where you are. Use what you have. Do what you can.",
+        "author": "Arthur Ashe"
+      },
+      {
+        "quote": "Your attitude determines your direction.",
+        "author": "Ralph Waldo Emerson"
+      },
+      {
+        "quote": "The only limit to our realization of tomorrow is our doubts of today.",
+        "author": "Franklin D. Roosevelt"
+      },
+      {
+        "quote": "You are never too old to set another goal or to dream a new dream.",
+        "author": "C.S. Lewis"
+      },
+      {
+        "quote": "What are you afraid of losing when nothing in the world actually belongs to you.",
+        "author": "Marcus Aurelius"
+      }
+    ]
   },
   {
     "topic": "Success",
-    "quote": "I find that the harder I work, the more luck I seem to have.",
-    "author": "Thomas Jefferson"
+    "quotes": [
+      {
+        "quote": "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        "author": "Winston Churchill"
+      },
+      {
+        "quote": "The way to get started is to quit talking and begin doing.",
+        "author": "Walt Disney"
+      },
+      {
+        "quote": "Success usually comes to those who are too busy to be looking for it.",
+        "author": "Henry David Thoreau"
+      },
+      {
+        "quote": "Don't wait. The time will never be just right.",
+        "author": "Napoleon Hill"
+      },
+      {
+        "quote": "Opportunities don't happen, you create them.",
+        "author": "Chris Grosser"
+      },
+      {
+        "quote": "Do not wait to strike till the iron is hot, but make it hot by striking.",
+        "author": "William Butler Yeats"
+      },
+      {
+        "quote": "Success is the result of preparation, hard work, and learning from failure.",
+        "author": "Colin Powell"
+      },
+      {
+        "quote": "The best way to predict the future is to create it.",
+        "author": "Abraham Lincoln"
+      },
+      {
+        "quote": "Success is walking from failure to failure with no loss of enthusiasm.",
+        "author": "Winston Churchill"
+      },
+      {
+        "quote": "I find that the harder I work, the more luck I seem to have.",
+        "author": "Thomas Jefferson"
+      },
+      {
+        "quote": "Success is stumbling from failure to failure with no loss of enthusiasm.",
+        "author": "Winston Churchill"
+      },
+      {
+        "quote": "Success is not in what you have, but who you are.",
+        "author": "Bo Bennett"
+      },
+      {
+        "quote": "There are no shortcuts to any place worth going.",
+        "author": "Beverly Sills"
+      },
+      {
+        "quote": "Your time is limited, don't waste it living someone else's life.",
+        "author": "Steve Jobs"
+      },
+      {
+        "quote": "The secret of success is to do the common things uncommonly well.",
+        "author": "John D. Rockefeller"
+      },
+      {
+        "quote": "Success isn't always about greatness. It's about consistency.",
+        "author": "Dwayne Johnson"
+      },
+      {
+        "quote": "The difference between who you are and who you want to be is what you do.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "Success is liking yourself, liking what you do, and liking how you do it.",
+        "author": "Maya Angelou"
+      },
+      {
+        "quote": "The path to success is to take massive, determined action.",
+        "author": "Tony Robbins"
+      },
+      {
+        "quote": "Your positive action combined with positive thinking results in success.",
+        "author": "Shiv Khera"
+      }
+    ]
   },
   {
     "topic": "Happiness",
-    "quote": "Happiness is not something ready made. It comes from your own actions.",
-    "author": "Dalai Lama"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "For every minute you are angry, you lose sixty seconds of happiness.",
-    "author": "Ralph Waldo Emerson"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.",
-    "author": "Ralph Waldo Emerson"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "Happiness depends upon ourselves.",
-    "author": "Aristotle"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "Happiness is when what you think, what you say, and what you do are in harmony.",
-    "author": "Mahatma Gandhi"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "The happiest people don't have the best of everything, they just make the best of everything.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "You will never be happy if you continue to search for what happiness consists of. You will never live if you are looking for the meaning of life.",
-    "author": "Albert Camus"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "Happiness is a warm puppy.",
-    "author": "Charles M. Schulz"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "Be happy for this moment. This moment is your life.",
-    "author": "Omar Khayyam"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "To be happy, we must not be too concerned with others.",
-    "author": "Albert Camus"
-  },
-  {
-    "topic": "Love",
-    "quote": "Love is composed of a single soul inhabiting two bodies.",
-    "author": "Aristotle"
-  },
-  {
-    "topic": "Love",
-    "quote": "To love and be loved is to feel the sun from both sides.",
-    "author": "David Viscott"
-  },
-  {
-    "topic": "Love",
-    "quote": "Love is when the other person's happiness is more important than your own.",
-    "author": "H. Jackson Brown Jr."
-  },
-  {
-    "topic": "Love",
-    "quote": "You don't love someone because they're perfect, you love them in spite of the fact that they're not.",
-    "author": "Jodi Picoult"
-  },
-  {
-    "topic": "Love",
-    "quote": "Love is a many-splendored thing.",
-    "author": "Paul Simon"
-  },
-  {
-    "topic": "Love",
-    "quote": "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.",
-    "author": "Lao Tzu"
-  },
-  {
-    "topic": "Love",
-    "quote": "Love is not about how many days, months, or years you have been together. Love is about how much you love each other every day.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Love",
-    "quote": "Love is like the wind, you can't see it but you can feel it.",
-    "author": "Nicholas Sparks"
+    "quotes": [
+      {
+        "quote": "Happiness is not something ready made. It comes from your own actions.",
+        "author": "Dalai Lama"
+      },
+      {
+        "quote": "For every minute you are angry, you lose sixty seconds of happiness.",
+        "author": "Ralph Waldo Emerson"
+      },
+      {
+        "quote": "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.",
+        "author": "Ralph Waldo Emerson"
+      },
+      {
+        "quote": "Happiness depends upon ourselves.",
+        "author": "Aristotle"
+      },
+      {
+        "quote": "The happiest people don't have the best of everything, they just make the best of everything.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "You will never be happy if you continue to search for what happiness consists of. You will never live if you are looking for the meaning of life.",
+        "author": "Albert Camus"
+      },
+      {
+        "quote": "Happiness is a warm puppy.",
+        "author": "Charles M. Schulz"
+      },
+      {
+        "quote": "Be happy for this moment. This moment is your life.",
+        "author": "Omar Khayyam"
+      },
+      {
+        "quote": "To be happy, we must not be too concerned with others.",
+        "author": "Albert Camus"
+      },
+      {
+        "quote": "The greatest happiness you can have is knowing that you do not necessarily require happiness.",
+        "author": "William Saroyan"
+      },
+      {
+        "quote": "Happiness is not by chance, but by choice.",
+        "author": "Jim Rohn"
+      },
+      {
+        "quote": "The most important thing is to enjoy your life—to be happy—it's all that matters.",
+        "author": "Audrey Hepburn"
+      },
+      {
+        "quote": "Happiness is a direction, not a place.",
+        "author": "Sydney J. Harris"
+      },
+      {
+        "quote": "The art of being happy lies in the power of extracting happiness from common things.",
+        "author": "Henry Ward Beecher"
+      },
+      {
+        "quote": "Count your age by friends, not years. Count your life by smiles, not tears.",
+        "author": "John Lennon"
+      },
+      {
+        "quote": "Happiness is letting go of what you think your life is supposed to look like.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "The secret of happiness is not in doing what one likes, but in liking what one does.",
+        "author": "James M. Barrie"
+      },
+      {
+        "quote": "Happiness is not something you postpone for the future; it is something you design for the present.",
+        "author": "Jim Rohn"
+      },
+      {
+        "quote": "If you want to be happy, set a goal that commands your thoughts, liberates your energy, and inspires your hopes.",
+        "author": "Andrew Carnegie"
+      },
+      {
+        "quote": "The foolish man seeks happiness in the distance; the wise grows it under his feet.",
+        "author": "James Oppenheim"
+      }
+    ]
   },
   {
     "topic": "Love",
-    "quote": "The best thing to hold onto in life is each other.",
-    "author": "Audrey Hepburn"
-  },
-  {
-    "topic": "Love",
-    "quote": "Love isn't something you find. Love is something that finds you.",
-    "author": "Loretta Young"
+    "quotes": [
+      {
+        "quote": "Love is composed of a single soul inhabiting two bodies.",
+        "author": "Aristotle"
+      },
+      {
+        "quote": "To love and be loved is to feel the sun from both sides.",
+        "author": "David Viscott"
+      },
+      {
+        "quote": "Love is when the other person's happiness is more important than your own.",
+        "author": "H. Jackson Brown Jr."
+      },
+      {
+        "quote": "You don't love someone because they're perfect, you love them in spite of the fact that they're not.",
+        "author": "Jodi Picoult"
+      },
+      {
+        "quote": "Love is a many-splendored thing.",
+        "author": "Paul Simon"
+      },
+      {
+        "quote": "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.",
+        "author": "Lao Tzu"
+      },
+      {
+        "quote": "Love is not about how many days, months, or years you have been together. Love is about how much you love each other every day.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "Love is like the wind, you can't see it but you can feel it.",
+        "author": "Nicholas Sparks"
+      },
+      {
+        "quote": "The best thing to hold onto in life is each other.",
+        "author": "Audrey Hepburn"
+      },
+      {
+        "quote": "Love isn't something you find. Love is something that finds you.",
+        "author": "Loretta Young"
+      },
+      {
+        "quote": "The best love is the kind that awakens the soul and makes us reach for more.",
+        "author": "Nicholas Sparks"
+      },
+      {
+        "quote": "A loving heart is the truest wisdom.",
+        "author": "Charles Dickens"
+      },
+      {
+        "quote": "Love is an untamed force. When we try to control it, it destroys us. When we try to imprison it, it enslaves us.",
+        "author": "Paulo Coelho"
+      },
+      {
+        "quote": "We accept the love we think we deserve.",
+        "author": "Stephen Chbosky"
+      },
+      {
+        "quote": "Love is the flower you've got to let grow.",
+        "author": "John Lennon"
+      },
+      {
+        "quote": "I have decided to stick with love. Hate is too great a burden to bear.",
+        "author": "Martin Luther King Jr."
+      },
+      {
+        "quote": "Love doesn't make the world go round. Love is what makes the ride worthwhile.",
+        "author": "Franklin P. Jones"
+      },
+      {
+        "quote": "All you need is love. But a little chocolate now and then doesn't hurt.",
+        "author": "Charles M. Schulz"
+      },
+      {
+        "quote": "Life is the flower for which love is the honey.",
+        "author": "Victor Hugo"
+      },
+      {
+        "quote": "The greatest happiness of life is the conviction that we are loved; loved for ourselves, or rather, loved in spite of ourselves.",
+        "author": "Victor Hugo"
+      }
+    ]
   },
   {
     "topic": "Perseverance",
-    "quote": "Perseverance is not a long race; it is many short races one after the other.",
-    "author": "Walter Elliot"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "Success is the result of preparation, hard work, and learning from failure.",
-    "author": "Colin Powell"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "It does not matter how slowly you go as long as you do not stop.",
-    "author": "Confucius"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will.",
-    "author": "Vince Lombardi"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "It always seems impossible until it's done.",
-    "author": "Nelson Mandela"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "Perseverance is the key to overcoming obstacles.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "A quitter never wins and a winner never quits.",
-    "author": "Napoleon Hill"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "The road to success is dotted with many tempting parking spaces.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "Perseverance is failing 19 times and succeeding the 20th.",
-    "author": "Julie Andrews"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "Don't give up. Don't ever give up.",
-    "author": "Jim Valvano"
-  },
-  {
-    "topic": "Focus",
-    "quote": "Focus on the journey, not the destination.",
-    "author": "Greg Anderson"
-  },
-  {
-    "topic": "Focus",
-    "quote": "The successful warrior is the average man, with laser-like focus.",
-    "author": "Bruce Lee"
-  },
-  {
-    "topic": "Focus",
-    "quote": "Success is the sum of small efforts, repeated day in and day out.",
-    "author": "Robert Collier"
-  },
-  {
-    "topic": "Focus",
-    "quote": "You can't depend on your eyes when your imagination is out of focus.",
-    "author": "Mark Twain"
-  },
-  {
-    "topic": "Focus",
-    "quote": "The best way to predict your future is to create it.",
-    "author": "Abraham Lincoln"
-  },
-  {
-    "topic": "Focus",
-    "quote": "Concentration is the secret of strength.",
-    "author": "Ralph Waldo Emerson"
-  },
-  {
-    "topic": "Focus",
-    "quote": "Focus on being productive instead of busy.",
-    "author": "Tim Ferriss"
-  },
-  {
-    "topic": "Focus",
-    "quote": "Focus is the key to unlocking your potential.",
-    "author": "Anonymous"
+    "quotes": [
+      {
+        "quote": "Perseverance is not a long race; it is many short races one after the other.",
+        "author": "Walter Elliot"
+      },
+      {
+        "quote": "Success is the result of preparation, hard work, and learning from failure.",
+        "author": "Colin Powell"
+      },
+      {
+        "quote": "It does not matter how slowly you go as long as you do not stop.",
+        "author": "Confucius"
+      },
+      {
+        "quote": "The difference between a successful person and others is not a lack of strength, not a lack of knowledge, but rather a lack in will.",
+        "author": "Vince Lombardi"
+      },
+      {
+        "quote": "It always seems impossible until it's done.",
+        "author": "Nelson Mandela"
+      },
+      {
+        "quote": "Perseverance is the key to overcoming obstacles.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "A quitter never wins and a winner never quits.",
+        "author": "Napoleon Hill"
+      },
+      {
+        "quote": "The road to success is dotted with many tempting parking spaces.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "Perseverance is failing 19 times and succeeding the 20th.",
+        "author": "Julie Andrews"
+      },
+      {
+        "quote": "Don't give up. Don't ever give up.",
+        "author": "Jim Valvano"
+      },
+      {
+        "quote": "The man who moves a mountain begins by carrying away small stones.",
+        "author": "Confucius"
+      },
+      {
+        "quote": "Patience, persistence, and perspiration make an unbeatable combination for success.",
+        "author": "Napoleon Hill"
+      },
+      {
+        "quote": "Fall seven times, stand up eight.",
+        "author": "Japanese Proverb"
+      },
+      {
+        "quote": "Rivers know this: there is no hurry. We shall get there some day.",
+        "author": "A.A. Milne"
+      },
+      {
+        "quote": "The only guarantee for failure is to stop trying.",
+        "author": "John C. Maxwell"
+      },
+      {
+        "quote": "When you come to the end of your rope, tie a knot and hang on.",
+        "author": "Franklin D. Roosevelt"
+      },
+      {
+        "quote": "Many of life's failures are people who did not realize how close they were to success when they gave up.",
+        "author": "Thomas A. Edison"
+      },
+      {
+        "quote": "I am not a product of my circumstances. I am a product of my decisions.",
+        "author": "Stephen Covey"
+      },
+      {
+        "quote": "The brick walls are there for a reason. They're not there to keep us out. The brick walls are there to give us a chance to show how badly we want something.",
+        "author": "Randy Pausch"
+      },
+      {
+        "quote": "Character consists of what you do on the third and fourth tries.",
+        "author": "James A. Michener"
+      }
+    ]
   },
   {
     "topic": "Focus",
-    "quote": "You cannot swim for new horizons until you have courage to lose sight of the shore.",
-    "author": "William Faulkner"
-  },
-  {
-    "topic": "Focus",
-    "quote": "Focus on the possibilities for success, not on the potential for failure.",
-    "author": "Anonymous"
+    "quotes": [
+      {
+        "quote": "Focus on the journey, not the destination.",
+        "author": "Greg Anderson"
+      },
+      {
+        "quote": "The successful warrior is the average man, with laser-like focus.",
+        "author": "Bruce Lee"
+      },
+      {
+        "quote": "Success is the sum of small efforts, repeated day in and day out.",
+        "author": "Robert Collier"
+      },
+      {
+        "quote": "You can't depend on your eyes when your imagination is out of focus.",
+        "author": "Mark Twain"
+      },
+      {
+        "quote": "The best way to predict your future is to create it.",
+        "author": "Abraham Lincoln"
+      },
+      {
+        "quote": "Concentration is the secret of strength.",
+        "author": "Ralph Waldo Emerson"
+      },
+      {
+        "quote": "Focus on being productive instead of busy.",
+        "author": "Tim Ferriss"
+      },
+      {
+        "quote": "Focus is the key to unlocking your potential.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "You cannot swim for new horizons until you have courage to lose sight of the shore.",
+        "author": "William Faulkner"
+      },
+      {
+        "quote": "Focus on the possibilities for success, not on the potential for failure.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "Where focus goes, energy flows.",
+        "author": "Tony Robbins"
+      },
+      {
+        "quote": "Concentrate all your thoughts upon the work in hand. The sun's rays do not burn until brought to a focus.",
+        "author": "Alexander Graham Bell"
+      },
+      {
+        "quote": "The main thing is to keep the main thing the main thing.",
+        "author": "Stephen Covey"
+      },
+      {
+        "quote": "Your focus determines your reality.",
+        "author": "George Lucas"
+      },
+      {
+        "quote": "It is during our darkest moments that we must focus to see the light.",
+        "author": "Aristotle"
+      },
+      {
+        "quote": "You will never reach your destination if you stop and throw stones at every dog that barks.",
+        "author": "Winston Churchill"
+      },
+      {
+        "quote": "Focus is a matter of deciding what things you're not going to do.",
+        "author": "John Carmack"
+      },
+      {
+        "quote": "What you stay focused on will grow.",
+        "author": "Roy T. Bennett"
+      },
+      {
+        "quote": "Focus on the solution, not the problem.",
+        "author": "Jim Rohn"
+      },
+      {
+        "quote": "Don't confuse movement with progress. A rocking horse keeps moving but doesn't make any progress.",
+        "author": "Alfred A. Montapert"
+      }
+    ]
   },
   {
     "topic": "Leadership",
-    "quote": "Leadership is not about being in charge. It’s about taking care of those in your charge.",
-    "author": "Simon Sinek"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "A good leader leads the people from above them. A great leader leads the people from within them.",
-    "author": "Mabel Newcomer"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "Leadership is the capacity to translate vision into reality.",
-    "author": "Warren Bennis"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "The quality of a leader is reflected in the standards they set for themselves.",
-    "author": "Ray Kroc"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "Leadership is not about being the best. It’s about making everyone else better.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "A true leader doesn’t create followers, they create more leaders.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "Leadership is not about being the boss, it’s about showing the way.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "The best way to predict the future is to create it.",
-    "author": "Abraham Lincoln"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "Leadership is about influence, not authority.",
-    "author": "John C. Maxwell"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "Leadership is the ability to get extraordinary achievement from ordinary people.",
-    "author": "Brian Tracy"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "The only way to do great work is to love what you do.",
-    "author": "Steve Jobs"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "Don’t be afraid to give up the good to go for the great.",
-    "author": "John D. Rockefeller"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "You don’t have to be great to start, but you have to start to be great.",
-    "author": "Zig Ziglar"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "Do one thing every day that scares you.",
-    "author": "Eleanor Roosevelt"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
-    "author": "Christian D. Larson"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "You become what you believe.",
-    "author": "Oprah Winfrey"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "Success is not how high you have climbed, but how you make a positive difference to the world.",
-    "author": "Roy T. Bennett"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "In order to succeed, we must first believe that we can.",
-    "author": "Nikos Kazantzakis"
+    "quotes": [
+      {
+        "quote": "Leadership is not about being in charge. It's about taking care of those in your charge.",
+        "author": "Simon Sinek"
+      },
+      {
+        "quote": "A good leader leads the people from above them. A great leader leads the people from within them.",
+        "author": "Mabel Newcomer"
+      },
+      {
+        "quote": "Leadership is the capacity to translate vision into reality.",
+        "author": "Warren Bennis"
+      },
+      {
+        "quote": "The quality of a leader is reflected in the standards they set for themselves.",
+        "author": "Ray Kroc"
+      },
+      {
+        "quote": "Leadership is not about being the best. It's about making everyone else better.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "A true leader doesn't create followers, they create more leaders.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "Leadership is not about being the boss, it's about showing the way.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "The best way to predict the future is to create it.",
+        "author": "Abraham Lincoln"
+      },
+      {
+        "quote": "Leadership is about influence, not authority.",
+        "author": "John C. Maxwell"
+      },
+      {
+        "quote": "Leadership is the ability to get extraordinary achievement from ordinary people.",
+        "author": "Brian Tracy"
+      },
+      {
+        "quote": "The greatest leader is not necessarily the one who does the greatest things. He is the one that gets the people to do the greatest things.",
+        "author": "Ronald Reagan"
+      },
+      {
+        "quote": "Innovation distinguishes between a leader and a follower.",
+        "author": "Steve Jobs"
+      },
+      {
+        "quote": "Leadership is unlocking people's potential to become better.",
+        "author": "Bill Bradley"
+      },
+      {
+        "quote": "A leader is one who knows the way, goes the way, and shows the way.",
+        "author": "John C. Maxwell"
+      },
+      {
+        "quote": "You don't lead by pointing and telling people where to go. You lead by going to that place and making a case.",
+        "author": "Ken Kesey"
+      },
+      {
+        "quote": "The challenge of leadership is to be strong, but not rude; be kind, but not weak; be bold, but not bully; be thoughtful, but not lazy; be humble, but not timid; be proud, but not arrogant.",
+        "author": "Jim Rohn"
+      },
+      {
+        "quote": "Leadership is the art of giving people a platform for spreading ideas that work.",
+        "author": "Seth Godin"
+      },
+      {
+        "quote": "Great leaders are not defined by the absence of weakness, but rather by the presence of clear strengths.",
+        "author": "John Zenger"
+      },
+      {
+        "quote": "The function of leadership is to produce more leaders, not more followers.",
+        "author": "Ralph Nader"
+      },
+      {
+        "quote": "The key to successful leadership is influence, not authority.",
+        "author": "Kenneth H. Blanchard"
+      }
+    ]
   },
   {
     "topic": "Self-Improvement",
-    "quote": "It always seems impossible until it’s done.",
-    "author": "Nelson Mandela"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "Do not wait to strike till the iron is hot, but make it hot by striking.",
-    "author": "William Butler Yeats"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "Anytime you start to miss her and want to text her remember that there's a guy on her phone who doesn't have to text her first.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "The only person you should try to be better than is the person you were yesterday.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "The question isn't who is going to let me; it's who is going to stop me.",
-    "author": "Ayn Rand"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "When you feel like quitting, remember why you started.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "Don't count the days, make the days count.",
-    "author": "Muhammad Ali"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "Act as if what you do makes a difference. It does.",
-    "author": "William James"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "If opportunity doesn't knock, build a door.",
-    "author": "Milton Berle"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "Start where you are. Use what you have. Do what you can.",
-    "author": "Arthur Ashe"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "Your attitude determines your direction.",
-    "author": "Ralph Waldo Emerson"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "The only limit to our realization of tomorrow is our doubts of today.",
-    "author": "Franklin D. Roosevelt"
-  },
-  {
-    "topic": "Motivation",
-    "quote": "You are never too old to set another goal or to dream a new dream.",
-    "author": "C.S. Lewis"
-  },
-  {
-    "topic": "Success",
-    "quote": "Success is stumbling from failure to failure with no loss of enthusiasm.",
-    "author": "Winston Churchill"
-  },
-  {
-    "topic": "Success",
-    "quote": "Success is not in what you have, but who you are.",
-    "author": "Bo Bennett"
-  },
-  {
-    "topic": "Success",
-    "quote": "There are no shortcuts to any place worth going.",
-    "author": "Beverly Sills"
-  },
-  {
-    "topic": "Success",
-    "quote": "Your time is limited, don't waste it living someone else's life.",
-    "author": "Steve Jobs"
-  },
-  {
-    "topic": "Success",
-    "quote": "The secret of success is to do the common things uncommonly well.",
-    "author": "John D. Rockefeller"
-  },
-  {
-    "topic": "Success",
-    "quote": "Success isn't always about greatness. It's about consistency.",
-    "author": "Dwayne Johnson"
-  },
-  {
-    "topic": "Success",
-    "quote": "The difference between who you are and who you want to be is what you do.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Success",
-    "quote": "Success is liking yourself, liking what you do, and liking how you do it.",
-    "author": "Maya Angelou"
-  },
-  {
-    "topic": "Success",
-    "quote": "The path to success is to take massive, determined action.",
-    "author": "Tony Robbins"
-  },
-  {
-    "topic": "Success",
-    "quote": "Your positive action combined with positive thinking results in success.",
-    "author": "Shiv Khera"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "The greatest happiness you can have is knowing that you do not necessarily require happiness.",
-    "author": "William Saroyan"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "Happiness is not by chance, but by choice.",
-    "author": "Jim Rohn"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "The most important thing is to enjoy your life—to be happy—it's all that matters.",
-    "author": "Audrey Hepburn"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "Happiness is a direction, not a place.",
-    "author": "Sydney J. Harris"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "The art of being happy lies in the power of extracting happiness from common things.",
-    "author": "Henry Ward Beecher"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "Count your age by friends, not years. Count your life by smiles, not tears.",
-    "author": "John Lennon"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "Happiness is letting go of what you think your life is supposed to look like.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "The secret of happiness is not in doing what one likes, but in liking what one does.",
-    "author": "James M. Barrie"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "Happiness is not something you postpone for the future; it is something you design for the present.",
-    "author": "Jim Rohn"
-  },
-  {
-    "topic": "Happiness",
-    "quote": "If you want to be happy, set a goal that commands your thoughts, liberates your energy, and inspires your hopes.",
-    "author": "Andrew Carnegie"
-  },
-  {
-    "topic": "Love",
-    "quote": "The best love is the kind that awakens the soul and makes us reach for more.",
-    "author": "Nicholas Sparks"
-  },
-  {
-    "topic": "Love",
-    "quote": "A loving heart is the truest wisdom.",
-    "author": "Charles Dickens"
-  },
-  {
-    "topic": "Love",
-    "quote": "Love is an untamed force. When we try to control it, it destroys us. When we try to imprison it, it enslaves us.",
-    "author": "Paulo Coelho"
-  },
-  {
-    "topic": "Love",
-    "quote": "We accept the love we think we deserve.",
-    "author": "Stephen Chbosky"
-  },
-  {
-    "topic": "Love",
-    "quote": "Love is the flower you've got to let grow.",
-    "author": "John Lennon"
-  },
-  {
-    "topic": "Love",
-    "quote": "I have decided to stick with love. Hate is too great a burden to bear.",
-    "author": "Martin Luther King Jr."
-  },
-  {
-    "topic": "Love",
-    "quote": "Love doesn't make the world go round. Love is what makes the ride worthwhile.",
-    "author": "Franklin P. Jones"
-  },
-  {
-    "topic": "Love",
-    "quote": "All you need is love. But a little chocolate now and then doesn't hurt.",
-    "author": "Charles M. Schulz"
-  },
-  {
-    "topic": "Love",
-    "quote": "Where there is love there is life.",
-    "author": "Mahatma Gandhi"
-  },
-  {
-    "topic": "Love",
-    "quote": "The greatest happiness of life is the conviction that we are loved; loved for ourselves, or rather, loved in spite of ourselves.",
-    "author": "Victor Hugo"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "The man who moves a mountain begins by carrying away small stones.",
-    "author": "Confucius"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "Patience, persistence, and perspiration make an unbeatable combination for success.",
-    "author": "Napoleon Hill"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "Fall seven times, stand up eight.",
-    "author": "Japanese Proverb"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "Rivers know this: there is no hurry. We shall get there some day.",
-    "author": "A.A. Milne"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "The only guarantee for failure is to stop trying.",
-    "author": "John C. Maxwell"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "When you come to the end of your rope, tie a knot and hang on.",
-    "author": "Franklin D. Roosevelt"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "Many of life's failures are people who did not realize how close they were to success when they gave up.",
-    "author": "Thomas A. Edison"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "I am not a product of my circumstances. I am a product of my decisions.",
-    "author": "Stephen Covey"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "The brick walls are there for a reason. They're not there to keep us out. The brick walls are there to give us a chance to show how badly we want something.",
-    "author": "Randy Pausch"
-  },
-  {
-    "topic": "Perseverance",
-    "quote": "Character consists of what you do on the third and fourth tries.",
-    "author": "James A. Michener"
-  },
-  {
-    "topic": "Focus",
-    "quote": "Where focus goes, energy flows.",
-    "author": "Tony Robbins"
-  },
-  {
-    "topic": "Focus",
-    "quote": "Concentrate all your thoughts upon the work in hand. The sun's rays do not burn until brought to a focus.",
-    "author": "Alexander Graham Bell"
-  },
-  {
-    "topic": "Focus",
-    "quote": "The main thing is to keep the main thing the main thing.",
-    "author": "Stephen Covey"
-  },
-  {
-    "topic": "Focus",
-    "quote": "Your focus determines your reality.",
-    "author": "George Lucas"
-  },
-  {
-    "topic": "Focus",
-    "quote": "It is during our darkest moments that we must focus to see the light.",
-    "author": "Aristotle"
-  },
-  {
-    "topic": "Focus",
-    "quote": "You will never reach your destination if you stop and throw stones at every dog that barks.",
-    "author": "Winston Churchill"
-  },
-  {
-    "topic": "Focus",
-    "quote": "Focus is a matter of deciding what things you're not going to do.",
-    "author": "John Carmack"
-  },
-  {
-    "topic": "Focus",
-    "quote": "What you stay focused on will grow.",
-    "author": "Roy T. Bennett"
-  },
-  {
-    "topic": "Focus",
-    "quote": "Focus on the solution, not the problem.",
-    "author": "Jim Rohn"
-  },
-  {
-    "topic": "Focus",
-    "quote": "Don't confuse movement with progress. A rocking horse keeps moving but doesn't make any progress.",
-    "author": "Alfred A. Montapert"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "The greatest leader is not necessarily the one who does the greatest things. He is the one that gets the people to do the greatest things.",
-    "author": "Ronald Reagan"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "Innovation distinguishes between a leader and a follower.",
-    "author": "Steve Jobs"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "Leadership is unlocking people's potential to become better.",
-    "author": "Bill Bradley"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "A leader is one who knows the way, goes the way, and shows the way.",
-    "author": "John C. Maxwell"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "You don't lead by pointing and telling people where to go. You lead by going to that place and making a case.",
-    "author": "Ken Kesey"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "The challenge of leadership is to be strong, but not rude; be kind, but not weak; be bold, but not bully; be thoughtful, but not lazy; be humble, but not timid; be proud, but not arrogant.",
-    "author": "Jim Rohn"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "Leadership is the art of giving people a platform for spreading ideas that work.",
-    "author": "Seth Godin"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "Great leaders are not defined by the absence of weakness, but rather by the presence of clear strengths.",
-    "author": "John Zenger"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "The function of leadership is to produce more leaders, not more followers.",
-    "author": "Ralph Nader"
-  },
-  {
-    "topic": "Leadership",
-    "quote": "The key to successful leadership is influence, not authority.",
-    "author": "Kenneth H. Blanchard"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "The only person you are destined to become is the person you decide to be.",
-    "author": "Ralph Waldo Emerson"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "Life is 10% what happens to you and 90% how you react to it.",
-    "author": "Charles R. Swindoll"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "The journey of a thousand miles begins with one step.",
-    "author": "Lao Tzu"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "Change your thoughts and you change your world.",
-    "author": "Norman Vincent Peale"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "Investing in yourself is the best investment you will ever make. It will not only improve your life, it will improve the lives of all those around you.",
-    "author": "Robin Sharma"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "The mind is everything. What you think you become.",
-    "author": "Buddha"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "You are your only limit.",
-    "author": "Anonymous"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "The more you know yourself, the more clarity there is. Self-knowledge has no end.",
-    "author": "Jiddu Krishnamurti"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "The biggest room in the world is the room for improvement.",
-    "author": "Helmut Schmidt"
-  },
-  {
-    "topic": "Self-Improvement",
-    "quote": "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.",
-    "author": "Rumi"
+    "quotes": [
+      {
+        "quote": "The only way to do great work is to love what you do.",
+        "author": "Steve Jobs"
+      },
+      {
+        "quote": "Don't be afraid to give up the good to go for the great.",
+        "author": "John D. Rockefeller"
+      },
+      {
+        "quote": "You don't have to be great to start, but you have to start to be great.",
+        "author": "Zig Ziglar"
+      },
+      {
+        "quote": "Do one thing every day that scares you.",
+        "author": "Eleanor Roosevelt"
+      },
+      {
+        "quote": "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
+        "author": "Christian D. Larson"
+      },
+      {
+        "quote": "You become what you believe.",
+        "author": "Oprah Winfrey"
+      },
+      {
+        "quote": "Success is not how high you have climbed, but how you make a positive difference to the world.",
+        "author": "Roy T. Bennett"
+      },
+      {
+        "quote": "In order to succeed, we must first believe that we can.",
+        "author": "Nikos Kazantzakis"
+      },
+      {
+        "quote": "It always seems impossible until it's done.",
+        "author": "Nelson Mandela"
+      },
+      {
+        "quote": "Do not wait to strike till the iron is hot, but make it hot by striking.",
+        "author": "William Butler Yeats"
+      },
+      {
+        "quote": "The only person you are destined to become is the person you decide to be.",
+        "author": "Ralph Waldo Emerson"
+      },
+      {
+        "quote": "Life is 10% what happens to you and 90% how you react to it.",
+        "author": "Charles R. Swindoll"
+      },
+      {
+        "quote": "The journey of a thousand miles begins with one step.",
+        "author": "Lao Tzu"
+      },
+      {
+        "quote": "Change your thoughts and you change your world.",
+        "author": "Norman Vincent Peale"
+      },
+      {
+        "quote": "Investing in yourself is the best investment you will ever make. It will not only improve your life, it will improve the lives of all those around you.",
+        "author": "Robin Sharma"
+      },
+      {
+        "quote": "The mind is everything. What you think you become.",
+        "author": "Buddha"
+      },
+      {
+        "quote": "You are your only limit.",
+        "author": "Anonymous"
+      },
+      {
+        "quote": "The more you know yourself, the more clarity there is. Self-knowledge has no end.",
+        "author": "Jiddu Krishnamurti"
+      },
+      {
+        "quote": "The biggest room in the world is the room for improvement.",
+        "author": "Helmut Schmidt"
+      },
+      {
+        "quote": "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.",
+        "author": "Rumi"
+      },
+      {
+        "quote": "Antime you start to miss her and want to text her remember that there's a guy on the phone who doesn't have to text her first.",
+        "author": "Anonymous"
+      }
+    ]
   }
 ]

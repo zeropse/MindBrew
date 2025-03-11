@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import quotes from "../data/quotes.json";
@@ -6,40 +6,63 @@ import quotes from "../data/quotes.json";
 const Quotes = ({ topic }) => {
   const [loading, setLoading] = useState(true);
   const [quote, setQuote] = useState(null);
-  const [currentQuoteId, setCurrentQuoteId] = useState(null);
+  const [previousQuote, setPreviousQuote] = useState(null);
 
-  const getRandomQuote = useCallback(() => {
+  const getRandomQuote = () => {
     setLoading(true);
 
     setTimeout(() => {
-      const filteredQuotes =
-        topic === "random"
-          ? quotes
-          : quotes.filter((q) => q.topic.toLowerCase() === topic.toLowerCase());
+      let availableQuotes = [];
 
-      if (filteredQuotes.length > 0) {
-        let randomIndex = Math.floor(Math.random() * filteredQuotes.length);
+      if (topic === "random") {
+        quotes.forEach((topicObj) => {
+          topicObj.quotes.forEach((quoteObj) => {
+            availableQuotes.push({
+              quote: quoteObj.quote,
+              author: quoteObj.author,
+              topic: topicObj.topic,
+            });
+          });
+        });
+      } else {
+        const topicObj = quotes.find(
+          (q) => q.topic.toLowerCase() === topic.toLowerCase()
+        );
+        if (topicObj && topicObj.quotes) {
+          availableQuotes = topicObj.quotes.map((q) => ({
+            quote: q.quote,
+            author: q.author,
+            topic: topicObj.topic,
+          }));
+        }
+      }
+
+      if (availableQuotes.length > 0) {
+        let randomIndex = Math.floor(Math.random() * availableQuotes.length);
+        let selectedQuote = availableQuotes[randomIndex];
 
         if (
-          filteredQuotes.length > 1 &&
-          filteredQuotes[randomIndex].id === currentQuoteId
+          previousQuote &&
+          availableQuotes.length > 1 &&
+          selectedQuote.quote === previousQuote.quote
         ) {
-          randomIndex = (randomIndex + 1) % filteredQuotes.length;
+          randomIndex = (randomIndex + 1) % availableQuotes.length;
+          selectedQuote = availableQuotes[randomIndex];
         }
 
-        const selectedQuote = filteredQuotes[randomIndex];
         setQuote(selectedQuote);
-        setCurrentQuoteId(selectedQuote.id);
+        setPreviousQuote(selectedQuote);
       } else {
         setQuote(null);
       }
 
       setLoading(false);
     }, 750);
-  }, [topic, currentQuoteId]);
+  };
 
   useEffect(() => {
     getRandomQuote();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [topic]);
 
   const handleGetAnotherQuote = () => {

@@ -22,7 +22,7 @@ const QuotePage = () => {
         </CardHeader>
 
         <CardContent className="pt-6 px-6 sm:px-8 md:px-10">
-          <Quotes topic={topicData.slug} topicName={topicData.name} />
+          <Quotes topic={topicData.slug} />
         </CardContent>
       </Card>
     </div>
