@@ -104,6 +104,15 @@ const Quotes = ({ topic }) => {
       </p>
       <p className="text-gray-400">— {quote.author}</p>
       <div className="mt-8 flex flex-col sm:flex-row gap-3 w-full justify-center">
+        <Button
+          className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto cursor-pointer"
+          onClick={handleGetAnotherQuote}
+        >
+          Get Another Quote
+        </Button>
+
+        <QuoteSharer quote={quote.quote} author={quote.author} />
+
         <Link to="/inspiration" className="w-full sm:w-auto">
           <Button
             variant="outline"
@@ -112,15 +121,6 @@ const Quotes = ({ topic }) => {
             Change Topic
           </Button>
         </Link>
-
-        <QuoteSharer quote={quote.quote} author={quote.author} />
-
-        <Button
-          className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto cursor-pointer"
-          onClick={handleGetAnotherQuote}
-        >
-          Get Another Quote
-        </Button>
       </div>
     </div>
   );

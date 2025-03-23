@@ -1,19 +1,19 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Share } from "lucide-react";
 import { toast, Toaster } from "react-hot-toast";
+import DOMPurify from "dompurify";
 
-const QuoteSharer = ({ quote, author }) => {
-  const [isSharing, setIsSharing] = useState(false);
+const useQuoteCanvas = () => {
   const canvasRef = useRef(null);
 
-  const drawQuoteToCanvas = (quote, author) => {
+  const drawQuoteToCanvas = useCallback((quote, author) => {
     if (!canvasRef.current) return null;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    const scaleFactor = 8;
+    const scaleFactor = window.devicePixelRatio || 4;
     const width = 600 * scaleFactor;
     const height = 400 * scaleFactor;
     const scaledWidth = width / scaleFactor;
@@ -26,21 +26,35 @@ const QuoteSharer = ({ quote, author }) => {
     canvas.height = height;
     ctx.scale(scaleFactor, scaleFactor);
 
-    ctx.fillStyle = "#262626";
-    ctx.fillRect(0, 0, scaledWidth, scaledHeight);
-    ctx.fillRect(
-      padding / 2,
-      padding / 2,
-      scaledWidth - padding,
-      scaledHeight - padding
-    );
+    ctx.clearRect(0, 0, scaledWidth, scaledHeight);
 
+    drawBackground(ctx, scaledWidth, scaledHeight, padding);
+
+    const lines = prepareTextLines(ctx, quote, contentWidth);
+
+    const { startY } = calculatePositions(lines.length, scaledHeight, padding);
+
+    drawQuoteText(ctx, lines, startY, centerX);
+
+    drawAuthor(ctx, author, startY + lines.length * 30, centerX);
+
+    drawFooter(ctx, scaledWidth, scaledHeight, padding);
+
+    return canvas;
+  }, []);
+
+  const drawBackground = (ctx, width, height, padding) => {
+    ctx.fillStyle = "#262626";
+    ctx.fillRect(0, 0, width, height);
+    ctx.fillRect(padding / 2, padding / 2, width - padding, height - padding);
+  };
+
+  const prepareTextLines = (ctx, text, maxWidth) => {
     ctx.font =
       "bold 24px system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
     ctx.textAlign = "center";
 
-    const maxWidth = contentWidth;
-    const words = quote.split(" ");
+    const words = text.split(" ");
     let lines = [];
     let currentLine = "";
 
@@ -55,12 +69,17 @@ const QuoteSharer = ({ quote, author }) => {
         currentLine = testLine;
       }
     }
+
     if (currentLine) {
       lines.push(currentLine);
     }
 
+    return lines;
+  };
+
+  const calculatePositions = (lineCount, height, padding) => {
     const lineHeight = 30;
-    const quoteHeight = lines.length * lineHeight;
+    const quoteHeight = lineCount * lineHeight;
     const authorHeight = 40;
     const footerHeight = 40;
 
@@ -69,14 +88,19 @@ const QuoteSharer = ({ quote, author }) => {
     const footerSpace = footerHeight + bottomPadding;
     const totalContentHeight = quoteHeight + authorHeight;
 
-    const availableHeight = scaledHeight - footerSpace - topPadding;
+    const availableHeight = height - footerSpace - topPadding;
     const startY = topPadding + (availableHeight - totalContentHeight) / 2;
 
-    let y = startY;
+    return { startY, footerY: height - footerHeight - bottomPadding };
+  };
 
+  const drawQuoteText = (ctx, lines, startY, centerX) => {
     ctx.textRendering = "optimizeLegibility";
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = "high";
+
+    const lineHeight = 30;
+    let y = startY;
 
     for (let i = 0; i < lines.length; i++) {
       let text = lines[i];
@@ -91,53 +115,81 @@ const QuoteSharer = ({ quote, author }) => {
       y += lineHeight;
     }
 
+    return y;
+  };
+
+  const drawAuthor = (ctx, author, y, centerX) => {
     ctx.fillStyle = "#a0a0a0";
     ctx.font =
       "italic 18px system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
     ctx.fillText(`— ${author}`, centerX, y + 20);
+  };
 
-    const footerY = scaledHeight - footerHeight - bottomPadding;
+  const drawFooter = (ctx, width, height, padding) => {
+    const footerHeight = 40;
+    const footerY = height - footerHeight - padding / 2;
+
     ctx.fillStyle = "#262626";
-    ctx.fillRect(padding / 2, footerY, scaledWidth - padding, footerHeight);
+    ctx.fillRect(padding / 2, footerY, width - padding, footerHeight);
 
     ctx.fillStyle = "#a0a0a0";
     ctx.font =
       "14px system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
 
     const footerTextY = footerY + footerHeight / 2 + 5;
-
-    // Calculate appropriate spacing for footer text
-    const leftPadding = padding; // Left margin
-    const rightPadding = padding; // Right margin
     const brandName = "MindBrew";
     const websiteUrl = "mindbrew.zeropse.xyz";
 
-    // Measure text widths to ensure they fit correctly
     ctx.textAlign = "left";
+    ctx.fillText(brandName, padding, footerTextY);
 
     ctx.textAlign = "right";
-
-    // Draw the footer text with appropriate padding
-    ctx.textAlign = "left";
-    ctx.fillText(brandName, leftPadding, footerTextY);
-
-    ctx.textAlign = "right";
-    // Remove the third parameter (maxWidth) to allow the text to render at its natural width
-    ctx.fillText(websiteUrl, scaledWidth - rightPadding, footerTextY);
-
-    return canvas;
+    ctx.fillText(websiteUrl, width - padding, footerTextY);
   };
 
-  const handleShare = async () => {
-    if (!quote || isSharing) return;
+  return { canvasRef, drawQuoteToCanvas };
+};
+
+// Debounce function to prevent rapid consecutive clicks
+const useDebounce = (callback, delay = 300) => {
+  const timer = useRef(null);
+
+  return (...args) => {
+    if (timer.current) {
+      clearTimeout(timer.current);
+    }
+
+    timer.current = setTimeout(() => {
+      callback(...args);
+      timer.current = null;
+    }, delay);
+  };
+};
+
+const QuoteSharer = ({ quote, author }) => {
+  const [isSharing, setIsSharing] = useState(false);
+  const { canvasRef, drawQuoteToCanvas } = useQuoteCanvas();
+
+  // Sanitize inputs to prevent XSS
+  const sanitizedQuote = useMemo(
+    () => DOMPurify.sanitize(quote || ""),
+    [quote]
+  );
+
+  const sanitizedAuthor = useMemo(
+    () => DOMPurify.sanitize(author || ""),
+    [author]
+  );
+
+  const handleShare = useDebounce(async () => {
+    if (!sanitizedQuote || isSharing) return;
 
     setIsSharing(true);
 
     try {
-      const shareText = `"${quote}"\n\n — ${author}\n\nFind more at: mindbrew.zeropse.xyz`;
-
+      // Always draw the canvas first
       if (canvasRef.current) {
-        drawQuoteToCanvas(quote, author);
+        drawQuoteToCanvas(sanitizedQuote, sanitizedAuthor);
 
         try {
           const blobPromise = new Promise((resolve, reject) => {
@@ -162,6 +214,7 @@ const QuoteSharer = ({ quote, author }) => {
             type: "image/png",
           });
 
+          // Try Web Share API with the image file first
           if (
             navigator.share &&
             navigator.canShare &&
@@ -170,54 +223,84 @@ const QuoteSharer = ({ quote, author }) => {
             await navigator.share({
               files: [file],
             });
-            toast.success("Quote shared successfully!");
+            toast.success("Quote shared as image!");
+            setIsSharing(false);
             return;
           }
-        } catch (err) {
-          console.log("Canvas sharing failed, falling back to text:", err);
-        }
-      }
 
-      if (navigator.share) {
-        await navigator.share({
-          title: "MindBrew Quote",
-          text: shareText,
-          url: "mindbrew.zeropse.xyz",
-        });
-        toast.success("Quote shared successfully!");
-      } else {
-        await navigator.clipboard.writeText(shareText);
-        toast.success("Quote copied to clipboard!");
+          // If sharing with the Web Share API isn't possible, copy the image to clipboard
+          if (navigator.clipboard && navigator.clipboard.write) {
+            const clipboardItem = new ClipboardItem({
+              "image/png": blob,
+            });
+
+            await navigator.clipboard.write([clipboardItem]);
+            toast.success("Quote image copied to clipboard!");
+            setIsSharing(false);
+            return;
+          }
+
+          // If neither method works, show an error
+          toast.error(
+            "Could not share or copy image. Your browser may not support this feature."
+          );
+        } catch (err) {
+          console.error("Canvas sharing failed:", err);
+          // More specific error messages based on error type
+          if (err.name === "NotAllowedError") {
+            toast.error("Clipboard permission denied. Please try again.");
+          } else if (err.message.includes("timeout")) {
+            toast.error("Image generation timed out.");
+          } else {
+            toast.error("Could not share as image. Try again later.");
+          }
+        }
       }
     } catch (error) {
       console.error("Share failed:", error);
-      toast.error("Unable to share. Please try again.");
+
+      // Provide more specific error messages
+      if (error.name === "AbortError") {
+        toast.error("Sharing was cancelled.");
+      } else if (error.name === "NotAllowedError") {
+        toast.error("Permission to share was denied.");
+      } else if (navigator.onLine === false) {
+        toast.error("You appear to be offline. Please check your connection.");
+      } else {
+        toast.error("Unable to share. Please try again.");
+      }
     } finally {
       setIsSharing(false);
     }
-  };
+  });
 
   return (
-    <>
+    <div className="quote-sharer">
       <Toaster position="top-center" />
 
       <canvas
         ref={canvasRef}
-        style={{ display: "none", position: "absolute", pointerEvents: "none" }}
+        style={{
+          display: "none",
+          position: "absolute",
+          pointerEvents: "none",
+        }}
         className="offscreen-canvas"
         aria-hidden="true"
       />
 
-      <Button
-        className="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white w-full sm:w-auto flex items-center justify-center transition-colors cursor-pointer"
-        onClick={handleShare}
-        disabled={isSharing}
-        aria-label="Share quote"
-      >
-        <Share size={18} className="mr-2" />
-        {isSharing ? "Sharing..." : "Share"}
-      </Button>
-    </>
+      <div className="flex justify-center w-full">
+        <Button
+          className="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white cursor-pointer"
+          onClick={handleShare}
+          disabled={isSharing}
+          aria-label={isSharing ? "Sharing quote" : "Share quote"}
+        >
+          <Share size={18} className="mr-2" />
+          {isSharing ? "Sharing..." : "Share Quote"}
+        </Button>
+      </div>
+    </div>
   );
 };
 
