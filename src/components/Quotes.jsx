@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Share } from "lucide-react";
 import quotes from "../data/quotes.json";
+import QuoteSharer from "./QuoteSharer";
 
 const Quotes = ({ topic }) => {
   const [loading, setLoading] = useState(true);
   const [quote, setQuote] = useState(null);
   const [previousQuote, setPreviousQuote] = useState(null);
-  const [isSharing, setIsSharing] = useState(false);
 
   const getRandomQuote = () => {
     setLoading(true);
@@ -72,30 +70,6 @@ const Quotes = ({ topic }) => {
     getRandomQuote();
   };
 
-  const handleShare = async () => {
-    if (!quote) return;
-
-    setIsSharing(true);
-
-    try {
-      const shareText = `"${quote.quote}"\n — ${quote.author}\n\nFind more at: ${window.location.origin}`;
-
-      if (navigator.share) {
-        await navigator.share({
-          title: "MindBrew Quotes",
-          text: shareText,
-        });
-      } else {
-        await navigator.clipboard.writeText(shareText);
-        alert("Quote copied to clipboard!");
-      }
-    } catch (error) {
-      console.error("Share failed:", error);
-    } finally {
-      setIsSharing(false);
-    }
-  };
-
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[200px]">
@@ -125,16 +99,11 @@ const Quotes = ({ topic }) => {
 
   return (
     <div className="text-center min-h-[200px] flex flex-col items-center justify-center py-6">
-      <Card className="bg-neutral-900 text-gray-100 border border-neutral-700 shadow-md mb-6 p-6 w-full">
-        <CardContent className="p-0">
-          <p className="text-lg sm:text-xl md:text-2xl font-medium mb-4 italic text-gray-100">
-            "{quote.quote}"
-          </p>
-          <p className="text-gray-400">— {quote.author}</p>
-        </CardContent>
-      </Card>
-
-      <div className="mt-6 flex flex-col sm:flex-row gap-3 w-full justify-center">
+      <p className="text-lg sm:text-xl md:text-2xl font-medium mb-6 italic text-gray-100">
+        "{quote.quote}"
+      </p>
+      <p className="text-gray-400">— {quote.author}</p>
+      <div className="mt-8 flex flex-col sm:flex-row gap-3 w-full justify-center">
         <Link to="/inspiration" className="w-full sm:w-auto">
           <Button
             variant="outline"
@@ -143,14 +112,9 @@ const Quotes = ({ topic }) => {
             Change Topic
           </Button>
         </Link>
-        <Button
-          className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto cursor-pointer flex items-center justify-center"
-          onClick={handleShare}
-          disabled={isSharing}
-        >
-          <Share size={18} className="mr-2" />
-          {isSharing ? "Sharing..." : "Share"}
-        </Button>
+
+        <QuoteSharer quote={quote.quote} author={quote.author} />
+
         <Button
           className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto cursor-pointer"
           onClick={handleGetAnotherQuote}
