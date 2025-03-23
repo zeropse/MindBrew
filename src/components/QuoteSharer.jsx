@@ -13,7 +13,7 @@ const QuoteSharer = ({ quote, author }) => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    const scaleFactor = 4;
+    const scaleFactor = 8;
     const width = 600 * scaleFactor;
     const height = 400 * scaleFactor;
     const scaledWidth = width / scaleFactor;
@@ -35,7 +35,8 @@ const QuoteSharer = ({ quote, author }) => {
       scaledHeight - padding
     );
 
-    ctx.font = "bold 24px 'Segoe UI', Arial, sans-serif";
+    ctx.font =
+      "bold 24px system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
     ctx.textAlign = "center";
 
     const maxWidth = contentWidth;
@@ -73,6 +74,10 @@ const QuoteSharer = ({ quote, author }) => {
 
     let y = startY;
 
+    ctx.textRendering = "optimizeLegibility";
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+
     for (let i = 0; i < lines.length; i++) {
       let text = lines[i];
       if (i === 0) text = `"${text}`;
@@ -87,7 +92,8 @@ const QuoteSharer = ({ quote, author }) => {
     }
 
     ctx.fillStyle = "#a0a0a0";
-    ctx.font = "italic 18px 'Segoe UI', Arial, sans-serif";
+    ctx.font =
+      "italic 18px system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
     ctx.fillText(`— ${author}`, centerX, y + 20);
 
     const footerY = scaledHeight - footerHeight - bottomPadding;
@@ -95,20 +101,29 @@ const QuoteSharer = ({ quote, author }) => {
     ctx.fillRect(padding / 2, footerY, scaledWidth - padding, footerHeight);
 
     ctx.fillStyle = "#a0a0a0";
-    ctx.font = "14px 'Segoe UI', Arial, sans-serif";
+    ctx.font =
+      "14px system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
 
-    const footerTextY = footerY + footerHeight / 2 + 5; // +5 for vertical centering within footer
+    const footerTextY = footerY + footerHeight / 2 + 5;
 
+    // Calculate appropriate spacing for footer text
+    const leftPadding = padding; // Left margin
+    const rightPadding = padding; // Right margin
+    const brandName = "MindBrew";
+    const websiteUrl = "mindbrew.zeropse.xyz";
+
+    // Measure text widths to ensure they fit correctly
     ctx.textAlign = "left";
-    ctx.fillText("MindBrew", padding, footerTextY);
 
     ctx.textAlign = "right";
-    ctx.fillText(
-      window.location.origin,
-      scaledWidth - padding,
-      footerTextY,
-      100
-    );
+
+    // Draw the footer text with appropriate padding
+    ctx.textAlign = "left";
+    ctx.fillText(brandName, leftPadding, footerTextY);
+
+    ctx.textAlign = "right";
+    // Remove the third parameter (maxWidth) to allow the text to render at its natural width
+    ctx.fillText(websiteUrl, scaledWidth - rightPadding, footerTextY);
 
     return canvas;
   };
@@ -119,7 +134,7 @@ const QuoteSharer = ({ quote, author }) => {
     setIsSharing(true);
 
     try {
-      const shareText = `"${quote}"\n\n — ${author}\n\nFind more at: ${window.location.origin}`;
+      const shareText = `"${quote}"\n\n — ${author}\n\nFind more at: mindbrew.zeropse.xyz`;
 
       if (canvasRef.current) {
         drawQuoteToCanvas(quote, author);
@@ -128,7 +143,7 @@ const QuoteSharer = ({ quote, author }) => {
           const blobPromise = new Promise((resolve, reject) => {
             const timeoutId = setTimeout(
               () => reject(new Error("Canvas to blob timeout")),
-              3000
+              5000
             );
 
             canvasRef.current.toBlob(
@@ -155,6 +170,7 @@ const QuoteSharer = ({ quote, author }) => {
             await navigator.share({
               files: [file],
             });
+            toast.success("Quote shared successfully!");
             return;
           }
         } catch (err) {
@@ -166,10 +182,12 @@ const QuoteSharer = ({ quote, author }) => {
         await navigator.share({
           title: "MindBrew Quote",
           text: shareText,
-          url: window.location.href,
+          url: "mindbrew.zeropse.xyz",
         });
+        toast.success("Quote shared successfully!");
       } else {
-        toast.error("Sharing not supported on this device");
+        await navigator.clipboard.writeText(shareText);
+        toast.success("Quote copied to clipboard!");
       }
     } catch (error) {
       console.error("Share failed:", error);
@@ -181,6 +199,8 @@ const QuoteSharer = ({ quote, author }) => {
 
   return (
     <>
+      <Toaster position="top-center" />
+
       <canvas
         ref={canvasRef}
         style={{ display: "none", position: "absolute", pointerEvents: "none" }}
