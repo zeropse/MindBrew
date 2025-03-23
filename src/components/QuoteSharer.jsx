@@ -43,11 +43,22 @@ const useQuoteCanvas = () => {
     return canvas;
   }, []);
 
-  const drawBackground = (ctx, width, height, padding) => {
+  function drawBackground(ctx, width, height, padding) {
     ctx.fillStyle = "#262626";
     ctx.fillRect(0, 0, width, height);
+
+    ctx.fillStyle = "#262626";
     ctx.fillRect(padding / 2, padding / 2, width - padding, height - padding);
-  };
+
+    ctx.strokeStyle = "#4a4a4a";
+    ctx.lineWidth = 3;
+    ctx.strokeRect(
+      padding / 2 + 5,
+      padding / 2 + 5,
+      width - padding - 10,
+      height - padding - 10
+    );
+  }
 
   const prepareTextLines = (ctx, text, maxWidth) => {
     ctx.font =
@@ -55,7 +66,7 @@ const useQuoteCanvas = () => {
     ctx.textAlign = "center";
 
     const words = text.split(" ");
-    let lines = [];
+    const lines = [];
     let currentLine = "";
 
     for (const word of words) {
@@ -128,9 +139,6 @@ const useQuoteCanvas = () => {
   const drawFooter = (ctx, width, height, padding) => {
     const footerHeight = 40;
     const footerY = height - footerHeight - padding / 2;
-
-    ctx.fillStyle = "#262626";
-    ctx.fillRect(padding / 2, footerY, width - padding, footerHeight);
 
     ctx.fillStyle = "#a0a0a0";
     ctx.font =
@@ -291,7 +299,7 @@ const QuoteSharer = ({ quote, author }) => {
 
       <div className="flex justify-center w-full">
         <Button
-          className="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white cursor-pointer"
+          className="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white cursor-pointer w-full sm:w-auto"
           onClick={handleShare}
           disabled={isSharing}
           aria-label={isSharing ? "Sharing quote" : "Share quote"}
