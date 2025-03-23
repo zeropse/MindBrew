@@ -1,108 +1,145 @@
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Share } from "lucide-react";
+import { toast, Toaster } from "react-hot-toast";
 
 const QuoteSharer = ({ quote, author }) => {
   const [isSharing, setIsSharing] = useState(false);
   const canvasRef = useRef(null);
 
-  // Fast drawing of quote card directly to canvas
   const drawQuoteToCanvas = (quote, author) => {
     if (!canvasRef.current) return null;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    // Canvas dimensions
-    canvas.width = 600;
-    canvas.height = 400;
+    const scaleFactor = 4;
+    const width = 600 * scaleFactor;
+    const height = 400 * scaleFactor;
+    const scaledWidth = width / scaleFactor;
+    const scaledHeight = height / scaleFactor;
+    const padding = 60;
+    const contentWidth = scaledWidth - padding * 2;
+    const centerX = scaledWidth / 2;
 
-    // Background
-    ctx.fillStyle = "#1a1a1a";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    canvas.width = width;
+    canvas.height = height;
+    ctx.scale(scaleFactor, scaleFactor);
 
-    // Card background
     ctx.fillStyle = "#262626";
-    ctx.fillRect(30, 30, canvas.width - 60, canvas.height - 60);
+    ctx.fillRect(0, 0, scaledWidth, scaledHeight);
+    ctx.fillRect(
+      padding / 2,
+      padding / 2,
+      scaledWidth - padding,
+      scaledHeight - padding
+    );
 
-    // Quote text
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "bold 24px Arial";
+    ctx.font = "bold 24px 'Segoe UI', Arial, sans-serif";
     ctx.textAlign = "center";
 
-    // Word wrapping for the quote
-    const maxWidth = canvas.width - 100;
+    const maxWidth = contentWidth;
     const words = quote.split(" ");
-    let line = "";
     let lines = [];
+    let currentLine = "";
 
-    for (let i = 0; i < words.length; i++) {
-      const testLine = line + words[i] + " ";
-      const metrics = ctx.measureText(testLine);
+    for (const word of words) {
+      const testLine = currentLine + (currentLine ? " " : "") + word;
+      const { width: testWidth } = ctx.measureText(testLine);
 
-      if (metrics.width > maxWidth && i > 0) {
-        lines.push(line);
-        line = words[i] + " ";
+      if (testWidth > maxWidth && currentLine) {
+        lines.push(currentLine);
+        currentLine = word;
       } else {
-        line = testLine;
+        currentLine = testLine;
       }
     }
-    lines.push(line);
-
-    // Draw quote
-    let y = canvas.height / 2 - (lines.length - 1) * 15;
-    for (let i = 0; i < lines.length; i++) {
-      ctx.fillText(`"${lines[i]}"`, canvas.width / 2, y);
-      y += 30;
+    if (currentLine) {
+      lines.push(currentLine);
     }
 
-    // Author
-    ctx.fillStyle = "#a0a0a0";
-    ctx.font = "18px Arial";
-    ctx.fillText(`— ${author}`, canvas.width / 2, y + 20);
+    const lineHeight = 30;
+    const quoteHeight = lines.length * lineHeight;
+    const authorHeight = 40;
+    const footerHeight = 40;
 
-    // Footer
-    ctx.fillStyle = "#4b5563";
-    ctx.fillRect(30, canvas.height - 70, canvas.width - 60, 40);
+    const topPadding = padding / 2;
+    const bottomPadding = padding / 2;
+    const footerSpace = footerHeight + bottomPadding;
+    const totalContentHeight = quoteHeight + authorHeight;
+
+    const availableHeight = scaledHeight - footerSpace - topPadding;
+    const startY = topPadding + (availableHeight - totalContentHeight) / 2;
+
+    let y = startY;
+
+    for (let i = 0; i < lines.length; i++) {
+      let text = lines[i];
+      if (i === 0) text = `"${text}`;
+      if (i === lines.length - 1) text = `${text}"`;
+
+      ctx.fillStyle = "rgba(0,0,0,0.5)";
+      ctx.fillText(text, centerX + 1, y + 1);
+
+      ctx.fillStyle = "#ffffff";
+      ctx.fillText(text, centerX, y);
+      y += lineHeight;
+    }
 
     ctx.fillStyle = "#a0a0a0";
-    ctx.font = "14px Arial";
+    ctx.font = "italic 18px 'Segoe UI', Arial, sans-serif";
+    ctx.fillText(`— ${author}`, centerX, y + 20);
+
+    const footerY = scaledHeight - footerHeight - bottomPadding;
+    ctx.fillStyle = "#262626";
+    ctx.fillRect(padding / 2, footerY, scaledWidth - padding, footerHeight);
+
+    ctx.fillStyle = "#a0a0a0";
+    ctx.font = "14px 'Segoe UI', Arial, sans-serif";
+
+    const footerTextY = footerY + footerHeight / 2 + 5; // +5 for vertical centering within footer
+
     ctx.textAlign = "left";
-    ctx.fillText("MindBrew ~ motivate your life", 50, canvas.height - 45);
+    ctx.fillText("MindBrew", padding, footerTextY);
 
     ctx.textAlign = "right";
-    ctx.fillText(window.location.origin, canvas.width - 50, canvas.height - 45);
+    ctx.fillText(
+      window.location.origin,
+      scaledWidth - padding,
+      footerTextY,
+      100
+    );
 
     return canvas;
   };
 
   const handleShare = async () => {
-    if (!quote) return;
+    if (!quote || isSharing) return;
 
     setIsSharing(true);
 
     try {
-      // Generate the share text (as fallback)
-      const shareText = `"${quote}" — ${author}\n\nFind more at: ${window.location.origin}`;
+      const shareText = `"${quote}"\n\n — ${author}\n\nFind more at: ${window.location.origin}`;
 
-      // First try to create and share the image (fast canvas approach)
       if (canvasRef.current) {
-        // Draw the quote to canvas (fast operation)
         drawQuoteToCanvas(quote, author);
 
         try {
-          // Convert canvas to blob with a timeout to ensure it doesn't take too long
           const blobPromise = new Promise((resolve, reject) => {
             const timeoutId = setTimeout(
               () => reject(new Error("Canvas to blob timeout")),
-              1000
+              3000
             );
 
-            canvasRef.current.toBlob((blob) => {
-              clearTimeout(timeoutId);
-              if (blob) resolve(blob);
-              else reject(new Error("Failed to create blob"));
-            }, "image/png");
+            canvasRef.current.toBlob(
+              (blob) => {
+                clearTimeout(timeoutId);
+                if (blob) resolve(blob);
+                else reject(new Error("Failed to create blob"));
+              },
+              "image/png",
+              1.0
+            );
           });
 
           const blob = await blobPromise;
@@ -110,43 +147,21 @@ const QuoteSharer = ({ quote, author }) => {
             type: "image/png",
           });
 
-          // Try Web Share API with the file
           if (
             navigator.share &&
             navigator.canShare &&
             navigator.canShare({ files: [file] })
           ) {
             await navigator.share({
-              title: "MindBrew Quote",
-              text: `"${quote}" — ${author}`,
               files: [file],
-              url: window.location.href,
             });
-            setIsSharing(false);
             return;
           }
-
-          // If sharing with file not supported, create download link
-          const url = URL.createObjectURL(blob);
-          const link = document.createElement("a");
-          link.href = url;
-          link.download = "mindbrew-quote.png";
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-
-          // Also copy text to clipboard
-          await navigator.clipboard.writeText(shareText);
-          alert("Quote image saved and text copied to clipboard!");
-          setIsSharing(false);
-          return;
         } catch (err) {
           console.log("Canvas sharing failed, falling back to text:", err);
-          // Fall through to text sharing
         }
       }
 
-      // Fallback to text sharing if image sharing fails or times out
       if (navigator.share) {
         await navigator.share({
           title: "MindBrew Quote",
@@ -154,21 +169,11 @@ const QuoteSharer = ({ quote, author }) => {
           url: window.location.href,
         });
       } else {
-        await navigator.clipboard.writeText(shareText);
-        alert("Quote copied to clipboard!");
+        toast.error("Sharing not supported on this device");
       }
     } catch (error) {
       console.error("Share failed:", error);
-
-      // Final fallback - just copy to clipboard
-      try {
-        const shareText = `"${quote}" — ${author}\n\nFind more at: ${window.location.origin}`;
-        await navigator.clipboard.writeText(shareText);
-        alert("Quote copied to clipboard!");
-      } catch (clipboardError) {
-        console.error("Clipboard copy failed:", clipboardError);
-        alert("Unable to share. Please try again.");
-      }
+      toast.error("Unable to share. Please try again.");
     } finally {
       setIsSharing(false);
     }
@@ -176,16 +181,18 @@ const QuoteSharer = ({ quote, author }) => {
 
   return (
     <>
-      {/* Hidden canvas for fast image generation */}
       <canvas
         ref={canvasRef}
         style={{ display: "none", position: "absolute", pointerEvents: "none" }}
+        className="offscreen-canvas"
+        aria-hidden="true"
       />
 
       <Button
-        className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto cursor-pointer flex items-center justify-center"
+        className="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white w-full sm:w-auto flex items-center justify-center transition-colors cursor-pointer"
         onClick={handleShare}
         disabled={isSharing}
+        aria-label="Share quote"
       >
         <Share size={18} className="mr-2" />
         {isSharing ? "Sharing..." : "Share"}
