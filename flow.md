@@ -18,7 +18,6 @@
 - **Prompt:** Ask the user for permission to send daily motivational quote notifications.
 - **Notification:** Send a daily notification with a quote based on their preferred topics (if available) or a randomly selected topic via email.
 
-
 **Additional Considerations:**
 
 - **Performance:** Optimize the app for speed and efficiency (e.g., by caching quotes, using efficient data fetching techniques).

@@ -16,7 +16,7 @@ const Header = () => {
         className="cursor-pointer hover:text-gray-300"
         onClick={() => navigate("/")}
       >
-        <h1 className="text-2xl md:text-4xl font-bold">motivatecore</h1>
+        <h1 className="text-2xl md:text-4xl font-bold">MindBrew</h1>
         <p className="text-xs md:text-sm pl-2 md:pl-5 pt-1">
           motivate your life
         </p>
