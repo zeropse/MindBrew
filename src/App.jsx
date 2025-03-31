@@ -13,8 +13,8 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/inspiration" element={<Inspirations />} />
           <Route path="/inspiration/:slug" element={<QuotePage />} />
-          <Route path="*" element={<NotFound />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
