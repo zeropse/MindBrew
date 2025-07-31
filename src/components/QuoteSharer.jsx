@@ -1,7 +1,8 @@
 import { useRef, useState, useMemo, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Share } from "lucide-react";
-import { toast, Toaster } from "react-hot-toast";
+import { Toaster } from "@/components/ui/sonner";
+import { toast } from "sonner";
 import DOMPurify from "dompurify";
 
 const useQuoteCanvas = () => {
@@ -299,7 +300,7 @@ const QuoteSharer = ({ quote, author }) => {
 
       <div className="flex justify-center w-full">
         <Button
-          className="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white cursor-pointer w-full sm:w-auto"
+          className="bg-green-600 hover:bg-green-700 active:bg-green-800 text-white cursor-pointer w-full sm:w-auto p-5"
           onClick={handleShare}
           disabled={isSharing}
           aria-label={isSharing ? "Sharing quote" : "Share quote"}

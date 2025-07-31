@@ -54,7 +54,7 @@ const Header = () => {
       {/* Mobile navigation menu */}
       {isMenuOpen && (
         <div className="absolute top-full left-0 right-0 bg-black bg-opacity-90 md:hidden">
-          <ul className="flex flex-col w-full">
+          <ul className="flex flex-col w-full items-center">
             <li
               className="cursor-pointer hover:text-gray-300 p-4 border-b border-gray-800"
               onClick={() => {

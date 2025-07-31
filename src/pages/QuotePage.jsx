@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import topics from "../data/topics";
-import Quotes from "../components/Quotes";
+import topics from "@/data/topics";
+import Quotes from "@/components/Quotes";
 import NotFound from "./NotFound";
 
 const QuotePage = () => {

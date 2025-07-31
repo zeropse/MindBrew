@@ -6,7 +6,7 @@ const Footer = () => {
         Made by{" "}
         <span
           className="font-bold cursor-pointer hover:text-gray-300 underline"
-          onClick={() => window.open("https://zeropse.xyz/", "_blank")}
+          onClick={() => window.open("https://zeropse.org/", "_blank")}
         >
           zeropse
         </span>

@@ -105,7 +105,7 @@ const Quotes = ({ topic }) => {
       <p className="text-gray-400">— {quote.author}</p>
       <div className="mt-8 flex flex-col sm:flex-row gap-3 w-full justify-center">
         <Button
-          className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto cursor-pointer"
+          className="bg-blue-600 hover:bg-blue-700 text-white w-full sm:w-auto p-5 cursor-pointer"
           onClick={handleGetAnotherQuote}
         >
           Get Another Quote
@@ -116,7 +116,7 @@ const Quotes = ({ topic }) => {
         <Link to="/inspiration" className="w-full sm:w-auto">
           <Button
             variant="outline"
-            className="text-black border-gray-500 hover:bg-gray-500 hover:text-white w-full cursor-pointer"
+            className="text-black border-gray-500 hover:bg-gray-500 hover:text-white w-full p-5 cursor-pointer"
           >
             Change Topic
           </Button>

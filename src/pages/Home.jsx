@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import React from "react";
+import { Button } from "@/components/ui/button";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -17,12 +17,13 @@ const Home = () => {
           </span>
         </p>
 
-        <button
-          className="cursor-pointer font-bold bg-white text-black px-6 py-3 rounded-lg shadow-md hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400"
+        <Button
+          variant="outline"
+          className="mt-4 cursor-pointer text-white hover:text-white bg-gradient-to-r from-purple-400 to-blue-500 rounded-md border-none"
           onClick={() => navigate("/inspiration")}
         >
           Find Your Quote
-        </button>
+        </Button>
       </div>
     </div>
   );

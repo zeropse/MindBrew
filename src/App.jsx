@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import RootLayout from "./layout/RootLayout";
-import Home from "./pages/Home";
-import QuotePage from "./pages/QuotePage";
-import NotFound from "./pages/NotFound";
-import Inspirations from "./pages/Inspirations";
+import RootLayout from "@/layout/RootLayout";
+import Home from "@/pages/Home";
+import QuotePage from "@/pages/QuotePage";
+import NotFound from "@/pages/NotFound";
+import Inspirations from "@/pages/Inspirations";
 
 const App = () => {
   return (
