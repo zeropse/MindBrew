@@ -2,10 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import topics from "@/data/topics";
+import { useEffect } from "react";
 
 const Inspirations = () => {
+  useEffect(() => {
+    document.title = "Inspirations ~ MindBrew";
+  }, []);
+
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-150px)] p-4">
+    <div className="flex items-center justify-center p-4 h-screen">
       <Card className="bg-neutral-900 text-gray-100 border border-neutral-700 shadow-2xl w-full max-w-5xl p-6 sm:p-8 md:p-10 lg:p-12">
         <CardHeader>
           <CardTitle className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center">

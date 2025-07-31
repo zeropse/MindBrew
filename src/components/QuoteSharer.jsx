@@ -147,7 +147,7 @@ const useQuoteCanvas = () => {
 
     const footerTextY = footerY + footerHeight / 2 + 5;
     const brandName = "MindBrew";
-    const websiteUrl = "mindbrew.zeropse.xyz";
+    const websiteUrl = "mindbrew.zeropse.org";
 
     ctx.textAlign = "left";
     ctx.fillText(brandName, padding, footerTextY);
