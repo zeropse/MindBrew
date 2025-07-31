@@ -58,7 +58,7 @@ const Quotes = ({ topic }) => {
       }
 
       setLoading(false);
-    }, 750);
+    }, 500);
   };
 
   useEffect(() => {

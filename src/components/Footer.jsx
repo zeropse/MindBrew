@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="flex justify-between items-center p-8 text-white z-10">
       <p className="text-md">@{new Date().getFullYear()} MindBrew</p>
-      <p className="text-md">
+      <p className="text-md hidden md:block">
         Made by{" "}
         <span
           className="font-bold cursor-pointer hover:text-gray-300 hover:underline"

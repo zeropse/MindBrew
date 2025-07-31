@@ -23,7 +23,7 @@ const Home = () => {
 
         <Button
           variant="outline"
-          className="mt-2 cursor-pointer p-6 text-white hover:text-white bg-gradient-to-r from-purple-400 to-blue-500 rounded-md border-none"
+          className="bg-gradient-to-r from-purple-400 to-blue-500 text-white rounded-md border-none focus-visible:ring-2 focus-visible:ring-purple-400 hover:from-purple-500 hover:to-blue-600 cursor-pointer hover:text-white w-full md:w-auto p-6 px-10"
           onClick={() => navigate("/inspiration")}
         >
           Find Your Quote

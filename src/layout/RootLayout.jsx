@@ -1,4 +1,4 @@
-import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Outlet } from "react-router-dom";
 import { ShootingStars } from "@/components/ui/shooting-stars";
@@ -15,7 +15,7 @@ const RootLayout = () => {
         className="z-0"
       />
       <ShootingStars minDelay={800} maxDelay={2200} className="z-0" />
-      <Header className="z-10 relative" />
+      <Navbar className="z-10 relative" />
       <main className="flex-grow z-10 relative">
         <Outlet />
       </main>
