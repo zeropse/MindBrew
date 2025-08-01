@@ -33,7 +33,7 @@ const Footer = () => {
           <Linkedin size={25} />
         </a>
         <a
-          href="https://twitter.com/zeropse"
+          href="https://twitter.com/zer0pse"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-gray-300"
