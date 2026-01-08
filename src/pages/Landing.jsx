@@ -62,9 +62,11 @@ export default function Landing() {
             Your daily dose of mental clarity
           </Badge>
 
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight mb-8 leading-[0.95] text-foreground">
-            Brew Your Mind with <br className="hidden sm:block" />
-            <span>Inspiring Quotes</span>
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight mb-8 leading-[1.1] md:leading-[1.05]">
+            Brew Your Mind with <br />
+            <span className="bg-linear-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
+              Inspiring Quotes
+            </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl leading-relaxed">
