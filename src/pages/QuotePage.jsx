@@ -8,7 +8,6 @@ import {
   IconQuote,
   IconArrowLeft,
   IconShare,
-  IconCopy,
 } from "@tabler/icons-react";
 import topics from "@/data/topics";
 import { getQuoteByTopic, getRandomQuote } from "@/lib/quoteUtils";

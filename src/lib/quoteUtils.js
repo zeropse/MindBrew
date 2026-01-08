@@ -1,16 +1,27 @@
 import topics from "@/data/topics";
 
-/**
- * Gets a random quote from a specific topic.
- */
+// cache to store loaded quotes by topic
+const quoteCache = {};
+
+// Gets a random quote from a specific topic.
 export const getQuoteByTopic = async (topic, previousQuote = null) => {
   try {
-    const module = await import(`@/data/${topic}.json`);
-    const availableQuotes = module.default.map((q) => ({
-      quote: q.quote,
-      author: q.author,
-      topic: topic,
-    }));
+    // Return from cache if topic already loaded
+    if (!quoteCache[topic]) {
+      const module = await import(`@/data/${topic}.json`);
+
+      if (!module || !module.default) {
+        throw new Error(`Invalid data structure in ${topic}.json`);
+      }
+
+      quoteCache[topic] = module.default.map((q) => ({
+        quote: q.quote,
+        author: q.author,
+        topic: topic,
+      }));
+    }
+
+    const availableQuotes = quoteCache[topic];
 
     if (availableQuotes.length === 0) return null;
 
@@ -33,9 +44,7 @@ export const getQuoteByTopic = async (topic, previousQuote = null) => {
   }
 };
 
-/**
- * Gets a random quote from any available topic.
- */
+// Gets a random quote from any available topic.
 export const getRandomQuote = async (previousQuote = null) => {
   const topicSlugs = topics
     .filter((t) => t.slug !== "random")
