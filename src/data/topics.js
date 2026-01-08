@@ -7,6 +7,7 @@ const topics = [
   { name: "Perseverance", slug: "perseverance" },
   { name: "Self-Improvement", slug: "self-improvement" },
   { name: "Focus", slug: "focus" },
+  { name: "Random", slug: "random" },
 ];
 
 export default topics;

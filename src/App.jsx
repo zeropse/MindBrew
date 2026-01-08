@@ -4,6 +4,7 @@ import Landing from "@/pages/Landing";
 import Inspirations from "@/pages/Inspirations";
 import QuotePage from "@/pages/QuotePage";
 import FAQs from "@/pages/FAQs";
+import NotFound from "@/pages/NotFound";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="inspirations" element={<Inspirations />} />
           <Route path="inspirations/:slug" element={<QuotePage />} />
           <Route path="faqs" element={<FAQs />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
