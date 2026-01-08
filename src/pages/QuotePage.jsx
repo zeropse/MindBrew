@@ -71,14 +71,14 @@ export default function QuotePage() {
   if (!topicData) return <Navigate to="/404" replace />;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
+    <div className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6 md:p-12 mb-12 sm:mb-0">
       <div className="w-full max-w-3xl">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-6 gap-4">
           <Button
             asChild
-            variant="ghost"
+            variant="outline"
             size="sm"
-            className="rounded-full hover:bg-primary/5 group"
+            className="rounded-full group"
           >
             <Link to="/inspirations" className="gap-2">
               <IconArrowLeft
@@ -91,17 +91,17 @@ export default function QuotePage() {
 
           <Badge
             variant="secondary"
-            className="px-4 py-1.5 rounded-full uppercase tracking-widest font-bold"
+            className="px-4 py-1.5 rounded-full uppercase tracking-widest font-bold whitespace-nowrap"
           >
             {topicData.name}
           </Badge>
         </div>
 
-        <Card>
+        <Card className="sm:shadow-xl shadow-sm border sm:border-muted">
           <div className="rounded-t-xl overflow-hidden">
             <CardContent
               ref={cardRef}
-              className="px-8 md:px-14 py-12 min-h-100 flex flex-col items-center justify-center text-center"
+              className="px-6 sm:px-10 md:px-14 py-12 sm:py-20 min-h-87.5 sm:min-h-112.5 flex flex-col items-center justify-center text-center bg-card"
             >
               {loading ? (
                 <div className="flex flex-col items-center gap-6">
@@ -111,12 +111,13 @@ export default function QuotePage() {
                   </p>
                 </div>
               ) : (
-                <div className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <h2 className="text-3xl md:text-5xl font-serif leading-[1.2] text-foreground tracking-tight italic">
+                <div className="space-y-8 sm:space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl font-serif leading-tight text-foreground tracking-tight italic">
                     “{quote.quote}”
                   </h2>
                   <div className="flex flex-col items-center">
-                    <p className="text-xl font-bold tracking-wide uppercase text-primary/50">
+                    <div className="h-1 w-12 bg-primary/20 mb-6 rounded-full" />
+                    <p className="text-base sm:text-lg md:text-xl font-bold tracking-widest uppercase text-primary/50 px-4">
                       {quote.author}
                     </p>
                   </div>
@@ -125,12 +126,12 @@ export default function QuotePage() {
             </CardContent>
           </div>
 
-          <CardFooter className="flex flex-col sm:flex-row gap-3 justify-center">
+          <CardFooter className="flex flex-col sm:flex-row gap-4 justify-center p-6 sm:p-10">
             <Button
               onClick={fetchNewQuote}
               disabled={loading}
               size="lg"
-              className="h-12 px-8 rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-all cursor-pointer w-full sm:w-auto"
+              className="h-12 px-8 rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all cursor-pointer w-full sm:w-auto"
             >
               <IconRefresh
                 className={`h-5 w-5 ${loading ? "animate-spin" : ""}`}
@@ -142,7 +143,7 @@ export default function QuotePage() {
               disabled={loading || isSharing}
               variant="outline"
               size="lg"
-              className="h-12 px-8 rounded-full cursor-pointer font-semibold hover:scale-105 transition-all w-full sm:w-auto"
+              className="h-12 px-8 rounded-full cursor-pointer font-semibold hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
             >
               {isSharing ? (
                 <IconLoader className="h-5 w-5 animate-spin" />

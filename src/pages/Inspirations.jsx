@@ -16,7 +16,7 @@ export default function Inspirations() {
   }, []);
 
   return (
-    <div className="min-h-screen py-24 px-4">
+    <div className="flex-1 py-12 sm:py-24 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-16">

@@ -62,8 +62,8 @@ export default function Landing() {
             Your daily dose of mental clarity
           </Badge>
 
-          <h1 className="text-6xl md:text-8xl font-black tracking-tight mb-8 leading-[0.95] text-foreground">
-            Brew Your Mind with <br />
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight mb-8 leading-[0.95] text-foreground">
+            Brew Your Mind with <br className="hidden sm:block" />
             <span>Inspiring Quotes</span>
           </h1>
 
@@ -73,7 +73,10 @@ export default function Landing() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Button className="h-14 px-10 text-lg font-bold group shadow-xl shadow-primary/15 cursor-pointer">
+            <Button
+              asChild
+              className="h-14 px-10 text-lg font-bold group shadow-xl shadow-primary/15 cursor-pointer"
+            >
               <Link to="/inspirations" className="flex items-center gap-2">
                 Get Inspired Now
                 <IconArrowRight
@@ -84,8 +87,8 @@ export default function Landing() {
             </Button>
 
             <Button
-              variant="ghost"
-              className="h-14 px-24 text-lg font-semibold cursor-pointer"
+              variant="outline"
+              className="h-14 px-10 text-lg font-semibold cursor-pointer"
               onClick={() => scrollToSection("how-it-works")}
             >
               <IconBook size={20} />
