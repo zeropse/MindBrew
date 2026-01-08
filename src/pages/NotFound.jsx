@@ -18,7 +18,7 @@ export default function NotFound() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "404 ~ MindBrew";
+    document.title = "404 | MindBrew";
   }, []);
 
   return (

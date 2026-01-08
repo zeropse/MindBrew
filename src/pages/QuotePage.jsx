@@ -40,7 +40,7 @@ export default function QuotePage() {
 
   useEffect(() => {
     if (topicData) {
-      document.title = `${topicData.name} ~ MindBrew`;
+      document.title = `${topicData.name} | MindBrew`;
       fetchNewQuote();
     }
   }, [topicData, fetchNewQuote]);

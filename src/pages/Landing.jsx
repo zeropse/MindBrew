@@ -15,7 +15,7 @@ import CTA from "@/components/CTA";
 
 export default function Landing() {
   useEffect(() => {
-    document.title = "MindBrew ~ Motivate Your Life";
+    document.title = "MindBrew | Motivate Your Life";
   }, []);
 
   const scrollToSection = (id) => {

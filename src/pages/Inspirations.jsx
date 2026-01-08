@@ -12,7 +12,7 @@ import {
 
 export default function Inspirations() {
   useEffect(() => {
-    document.title = "Inspirations ~ MindBrew";
+    document.title = "Inspirations | MindBrew";
   }, []);
 
   return (
