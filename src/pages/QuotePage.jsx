@@ -3,12 +3,8 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  IconQuote,
-  IconArrowLeft,
-  IconShare,
-  IconLoader,
-} from "@tabler/icons-react";
+import { Spinner } from "@/components/ui/spinner";
+import { IconQuote, IconArrowLeft, IconShare } from "@tabler/icons-react";
 import topics from "@/data/topics";
 import { getQuoteByTopic, getRandomQuote } from "@/lib/quoteUtils";
 import { shareAsImage } from "@/lib/sharing";
@@ -132,7 +128,7 @@ export default function QuotePage() {
               size="lg"
               className="h-12 px-8 rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all cursor-pointer w-full sm:w-auto"
             >
-              {loading && <IconLoader className="h-5 w-5 animate-spin" />}
+              {loading && <Spinner className="h-5 w-5" />}
               New Quote
             </Button>
             <Button
@@ -143,7 +139,7 @@ export default function QuotePage() {
               className="h-12 px-8 rounded-full cursor-pointer font-semibold hover:scale-105 active:scale-95 transition-all w-full sm:w-auto"
             >
               {isSharing ? (
-                <IconLoader className="h-5 w-5 animate-spin" />
+                <Spinner className="h-5 w-5" />
               ) : (
                 <IconShare className="h-5 w-5" />
               )}
