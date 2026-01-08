@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import quotes from "../data/quotes.json";
+import quotes from "../../../src/data/quotes.json";
 import QuoteSharer from "./QuoteSharer";
 
 const Quotes = ({ topic }) => {

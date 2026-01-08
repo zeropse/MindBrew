@@ -1,15 +1,59 @@
-export default function FAQs() {
+import CTA from "@/components/CTA";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { useEffect } from "react";
+
+export default function FAQsFour() {
+  useEffect(() => {
+    document.title = "FAQs | MindBrew";
+  }, []);
+
+  const faqItems = [];
+
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
-      <h1 className="mb-6 text-3xl font-bold">Frequently Asked Questions</h1>
-      <section className="mb-8">
-        <h2 className="mb-4 text-2xl font-semibold">What is MindBrew?</h2>
-        <p className="text-base leading-7 text-muted-foreground">
-          MindBrew is a productivity and motivation app designed to help you
-          stay focused and inspired throughout your day. It offers a variety of
-          tools and features to enhance your workflow and boost your motivation.
-        </p>
-      </section>
+    <div className="py-16 md:py-24">
+      <div className="mx-auto max-w-5xl px-4 md:px-6">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-balance text-3xl font-bold md:text-4xl lg:text-5xl">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-muted-foreground mt-4 text-balance">
+            Discover quick and comprehensive answers to common questions about
+            MindBrew.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-xl">
+          <Accordion
+            type="single"
+            collapsible
+            className="bg-muted dark:bg-muted/50 w-full rounded-2xl p-1"
+          >
+            {faqItems.map((item) => (
+              <div className="group" key={item.id}>
+                <AccordionItem
+                  value={item.id}
+                  className="data-[state=open]:bg-card dark:data-[state=open]:bg-muted peer rounded-xl border-none px-7 py-1 data-[state=open]:border-none data-[state=open]:shadow-sm"
+                >
+                  <AccordionTrigger className="cursor-pointer text-base hover:no-underline">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <p className="text-base">{item.answer}</p>
+                  </AccordionContent>
+                </AccordionItem>
+                <hr className="mx-7 border-dashed group-last:hidden peer-data-[state=open]:opacity-0" />
+              </div>
+            ))}
+          </Accordion>
+        </div>
+      </div>
+
+      <CTA />
     </div>
   );
 }
