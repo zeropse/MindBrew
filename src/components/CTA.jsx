@@ -23,11 +23,10 @@ export default function CTA() {
         </CardHeader>
         <CardContent>
           <Button
-            asChild
             size="lg"
-            className="rounded-full px-8 font-semibold transition-transform hover:scale-105"
+            className="rounded-full px-8 font-semibold transition-transform hover:scale-105 cursor-pointer"
           >
-            <Link to="/inspirations">Start Exploring Free</Link>
+            <Link to="/inspirations">Explore Now!</Link>
           </Button>
         </CardContent>
       </Card>
