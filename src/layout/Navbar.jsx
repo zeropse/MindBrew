@@ -1,6 +1,7 @@
 import { ModeToggle } from "@/style/ModeToggle";
 import { IconNotebook } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   return (
@@ -20,8 +21,11 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
           <ModeToggle />
+          <Button variant="secondary" asChild>
+            <Link to="/faqs">FAQs</Link>
+          </Button>
         </div>
       </div>
     </nav>
