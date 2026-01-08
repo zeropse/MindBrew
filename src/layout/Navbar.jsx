@@ -1,5 +1,5 @@
 import { ModeToggle } from "@/style/ModeToggle";
-import { IconBrain } from "@tabler/icons-react";
+import { IconNotebook } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
@@ -8,13 +8,13 @@ export default function Navbar() {
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2 group">
           <span className="flex h-8 w-8 items-center justify-center rounded-md bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
-            <IconBrain className="h-4 w-4" />
+            <IconNotebook className="h-6 w-6" />
           </span>
           <div className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold tracking-[0.18em] uppercase text-muted-foreground">
+            <span className="text-sm font-semibold tracking-widest uppercase text-muted-foreground">
               MindBrew
             </span>
-            <span className="text-[11px] text-muted-foreground/70">
+            <span className="text-[11px] text-muted-foreground">
               Motivate Your Life
             </span>
           </div>
