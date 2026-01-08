@@ -4,7 +4,6 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  IconRefresh,
   IconQuote,
   IconArrowLeft,
   IconShare,
@@ -133,9 +132,7 @@ export default function QuotePage() {
               size="lg"
               className="h-12 px-8 rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all cursor-pointer w-full sm:w-auto"
             >
-              <IconRefresh
-                className={`h-5 w-5 ${loading ? "animate-spin" : ""}`}
-              />
+              {loading && <IconLoader className="h-5 w-5 animate-spin" />}
               New Quote
             </Button>
             <Button
