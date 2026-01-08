@@ -1,23 +1,25 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import RootLayout from "@/layout/RootLayout";
-import Home from "@/pages/Home";
-import QuotePage from "@/pages/QuotePage";
-import NotFound from "@/pages/NotFound";
+import Layout from "@/layout";
+import Landing from "@/pages/Landing";
 import Inspirations from "@/pages/Inspirations";
+import QuotePage from "@/pages/QuotePage";
+import FAQs from "@/pages/FAQs";
+import NotFound from "@/pages/NotFound";
 
-const App = () => {
+function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<RootLayout />}>
-          <Route index element={<Home />} />
-          <Route path="/inspiration" element={<Inspirations />} />
-          <Route path="/inspiration/:slug" element={<QuotePage />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Landing />} />
+          <Route path="inspirations" element={<Inspirations />} />
+          <Route path="inspirations/:slug" element={<QuotePage />} />
+          <Route path="faqs" element={<FAQs />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default App;

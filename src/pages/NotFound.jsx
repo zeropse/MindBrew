@@ -1,43 +1,74 @@
-import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  IconHome,
+  IconArrowLeft,
+  IconAlertTriangle,
+} from "@tabler/icons-react";
 
-const NotFound = () => {
+export default function NotFound() {
   const navigate = useNavigate();
 
-  const handleGoHome = () => {
-    navigate("/");
-  };
-
   useEffect(() => {
-    document.title = "404 - Page Not Found";
+    document.title = "404 | MindBrew";
   }, []);
 
   return (
-    <main>
-      <StarsBackground
-        allStarsTwinkle={true}
-        starDensity={0.001}
-        minTwinkleSpeed={0.5}
-        maxTwinkleSpeed={1}
-      />
-      <ShootingStars minDelay={800} maxDelay={2200} />
-      <div className="flex flex-col items-center justify-center h-screen bg-black">
-        <h1 className="text-4xl font-bold text-white">404 - Page Not Found</h1>
-        <p className="text-gray-500 mt-2">
-          The page you are looking for does not exist.
-        </p>
-        <Button
-          onClick={handleGoHome}
-          className="mt-4 p-5 text-white cursor-pointer bg-gradient-to-r from-purple-400 to-blue-500 rounded-md"
-        >
-          Go back to the home page
-        </Button>
-      </div>
-    </main>
-  );
-};
+    <div className="flex-1 flex items-center justify-center p-6">
+      <div className="w-full max-w-lg">
+        <Card className="backdrop-blur-xl shadow-2xl shadow-primary/5">
+          <CardHeader className="text-center">
+            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-3xl bg-primary/10">
+              <IconAlertTriangle
+                className="h-10 w-10 text-destructive"
+                stroke={1.5}
+              />
+            </div>
 
-export default NotFound;
+            <div className="space-y-2">
+              <p className="text-sm font-bold uppercase tracking-widest text-primary/60">
+                Error 404
+              </p>
+              <CardTitle className="text-4xl font-black tracking-tight text-foreground">
+                Page Not Found
+              </CardTitle>
+            </div>
+
+            <CardDescription className="mt-4 text-base text-muted-foreground leading-relaxed">
+              We couldn't find the page you're looking for. It might have been
+              moved, or perhaps it never existed in this realm.
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent className="text-center px-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <Button
+              size="lg"
+              className="flex-1 h-12 text-md font-bold shadow-lg shadow-primary/20 cursor-pointer"
+              onClick={() => navigate("/")}
+            >
+              <IconHome className="h-5 w-5" />
+              Go Home
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="flex-1 h-12 font-semibold border-border/60 cursor-pointer"
+              onClick={() => navigate(-1)}
+            >
+              <IconArrowLeft className="h-4 w-4" />
+              Go Back
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}
