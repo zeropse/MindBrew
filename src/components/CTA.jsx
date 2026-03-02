@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export default function CTA() {
   return (
-    <section className="py-24 px-4">
+    <section className="py-24">
       <Card className="max-w-3xl mx-auto border-none shadow-lg text-center">
         <CardHeader className="space-y-4">
           <CardTitle className="text-3xl md:text-4xl font-bold tracking-tight">

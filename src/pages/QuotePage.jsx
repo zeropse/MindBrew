@@ -53,8 +53,8 @@ export default function QuotePage() {
       await shareAsImage(
         cardRef.current,
         `mindbrew-${slug}-${String(d.getDate()).padStart(2, "0")}${String(
-          d.getMonth() + 1
-        ).padStart(2, "0")}${d.getFullYear()}.png`
+          d.getMonth() + 1,
+        ).padStart(2, "0")}${d.getFullYear()}.png`,
       );
     } catch (error) {
       console.error("Failed to share:", error);
