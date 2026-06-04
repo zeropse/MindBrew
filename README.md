@@ -33,23 +33,16 @@ MindBrew is the ultimate destination for daily motivation. Explore quotes on suc
 2. Install dependencies:
 
    ```bash
-   pnpm install
+   bun install
    ```
 
 3. Start the development server:
 
    ```bash
-   pnpm dev
+   bun dev
    ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Available Scripts
-
-- `pnpm dev` - Start the development server
-- `pnpm build` - Build the project for production
-- `pnpm preview` - Preview the production build locally
-- `pnpm lint` - Run ESLint for code linting
 
 ## Project Structure
 
