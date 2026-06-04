@@ -23,8 +23,7 @@ export default function Landing() {
     if (element) {
       const headerOffset = 100;
       const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
@@ -55,7 +54,7 @@ export default function Landing() {
 
   return (
     <div>
-      <section className="relative overflow-hidden px-4 py-26">
+      <section className="relative overflow-hidden px-4 py-24">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           <Badge className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium mb-8 hover:bg-primary/20 transition-colors">
             <IconSparkles size={16} />
@@ -74,33 +73,31 @@ export default function Landing() {
             journey toward success and fulfillment.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center items-center">
             <Button
               asChild
-              className="h-14 px-10 text-lg font-bold group shadow-xl shadow-primary/15 cursor-pointer"
-            >
-              <Link to="/inspirations" className="flex items-center gap-2">
-                Get Inspired Now
+              className="relative h-14 px-10 text-lg font-semibold group overflow-hidden rounded-xl bg-primary text-primary-foreground shadow-2xl shadow-primary/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-primary/35 cursor-pointer">
+              <Link to="/inspirations" className="flex items-center gap-3">
+                <span>Start My Brew</span>
                 <IconArrowRight
                   size={20}
-                  className="transition-transform group-hover:translate-x-1"
+                  className="transition-transform duration-300 group-hover:translate-x-1.5"
                 />
               </Link>
             </Button>
 
             <Button
-              variant="outline"
-              className="h-14 px-10 text-lg font-semibold cursor-pointer"
-              onClick={() => scrollToSection("how-it-works")}
-            >
-              <IconBook size={20} />
-              Learn More
+              variant="ghost"
+              className="h-14 px-10 text-lg font-medium rounded-xl border border-border bg-background/50 backdrop-blur-xs text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all duration-200 cursor-pointer gap-2"
+              onClick={() => scrollToSection("how-it-works")}>
+              <IconBook size={20} className="text-primary/70" />
+              <span>See the Recipe</span>
             </Button>
           </div>
         </div>
       </section>
 
-      <section id="how-it-works" className="py-26 px-4 bg-muted/20">
+      <section id="how-it-works" className="py-24 px-4 bg-muted/20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
