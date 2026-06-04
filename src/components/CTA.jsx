@@ -23,9 +23,8 @@ export default function CTA() {
         </CardHeader>
         <CardContent>
           <Button
-            size="lg"
-            className="rounded-full px-8 font-semibold transition-transform hover:scale-105 cursor-pointer"
-          >
+            asChild
+            className="rounded-full px-8 py-6 font-semibold transition-transform hover:scale-105 cursor-pointer">
             <Link to="/inspirations">Explore Now!</Link>
           </Button>
         </CardContent>

@@ -17,8 +17,7 @@ function App() {
           <div className="flex justify-center items-center min-h-screen">
             <Spinner className="size-8 text-primary" />
           </div>
-        }
-      >
+        }>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Landing />} />
